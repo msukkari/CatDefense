@@ -20,6 +20,6 @@ public class PlayerController : MonoBehaviour {
         Debug.Log(dir);
 
         transform.Translate(dis);
-        transform.LookAt(new Vector3(dir.x, 0.0f, dir.y));
+        //transform.LookAt(new Vector3(dir.x, 0.0f, dir.y));
     }
 }
