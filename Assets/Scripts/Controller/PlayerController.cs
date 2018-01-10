@@ -8,18 +8,16 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        ControllerInputManager.GetInstance().OnADown += OnAPress;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetKeyDown(KeyCode.Space)) Debug.Log("Player pressed space");
+    }
 
-        Vector2 dis = new Vector2(Input.GetAxis("Horizontal") * m_speed, Input.GetAxis("Vertical") * m_speed);
-        Vector2 dir = new Vector2(Input.GetAxis("RStickX"), Input.GetAxis("RStickY"));
-
-        Debug.Log(dir);
-
-        transform.Translate(dis);
-        //transform.LookAt(new Vector3(dir.x, 0.0f, dir.y));
+    private void OnAPress()
+    {
+        Debug.Log("Player pressed A");
     }
 }
