@@ -5,37 +5,50 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float m_speed;
+    public GameObject neighborObject;
+    public GameObject heldResource;
 
     private Rigidbody2D rb;
-    private GameObject curRawResource;
 
-	// Use this for initialization
 	void Start () {
         ControllerInputManager.GetInstance().OnADown += OnAPress;
 
         rb = GetComponent<Rigidbody2D>();
-        curRawResource = null;
+        neighborObject = null;
+        heldResource = null;
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
 
         float y = Input.GetKey(KeyCode.W) ? 1.0f : Input.GetKey(KeyCode.S) ? -1.0f : 0.0f;
         float x = Input.GetKey(KeyCode.D) ? 1.0f : Input.GetKey(KeyCode.A) ? -1.0f : 0.0f;
         rb.velocity = new Vector2(x * m_speed, y * m_speed);
 
-        if (Input.GetKeyDown(KeyCode.Space) && curRawResource) mineRR(curRawResource);
+        if (Input.GetKeyDown(KeyCode.Space) && neighborObject)
+        {
+            if (neighborObject.tag == "RR") mineRR(neighborObject);
+            else if (neighborObject.tag == "Refiner") neighborObject.GetComponent<Refiner>().Refine(heldResource);
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D coll)
     {
         // NOTE: this might cause issues when player is colliding with two raw resources!
-        if (coll.gameObject.tag == "RR") curRawResource = coll.gameObject;
+        neighborObject = coll.gameObject;
     }
 
     public void OnCollisionExit2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "RR") curRawResource = null;
+        neighborObject = null;
+    }
+
+    public void OnTriggerEnter2D(Collider2D coll)
+    {
+        coll.transform.parent.transform.parent = transform;
+        heldResource = coll.transform.parent.gameObject;
+
+        // destory the trigger
+        Destroy(coll.transform.gameObject);
     }
 
     private void OnAPress()
@@ -45,6 +58,6 @@ public class PlayerController : MonoBehaviour {
 
     private void mineRR(GameObject rr)
     {
-
+        rr.GetComponent<Resource>().OnMine();
     }
 }

@@ -19,12 +19,10 @@ public class SpawnPoint : MonoBehaviour {
         curResource = null;
     }
 
-	// Use this for initialization
 	void Start () {
         hasResource = false;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}

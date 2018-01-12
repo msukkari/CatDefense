@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: 21c4706b1ce2e1e4eb1605eeab7eb344
-timeCreated: 1515522842
+guid: 2b0068768f779d847af4354b5f5face5
+timeCreated: 1515714458
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
+  externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -30,24 +31,24 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 3
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 9
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 4
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -57,17 +58,36 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    textureFormat: -1
+    resizeAlgorithm: 0
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
-    physicsShape: []
+    outline:
+    - - {x: 0, y: 2}
+      - {x: -1, y: 1.7320508}
+      - {x: -1.7320509, y: 0.99999994}
+      - {x: -2, y: -0.00000008742278}
+      - {x: -1.7320508, y: -1.0000001}
+      - {x: -1.0000001, y: -1.7320508}
+      - {x: -0.0000003019916, y: -2}
+      - {x: 0.9999996, y: -1.732051}
+      - {x: 1.7320504, y: -1.0000006}
+      - {x: 2, y: -0.0000009298246}
+      - {x: 1.7320514, y: 0.999999}
+      - {x: 1.0000012, y: 1.7320502}
+    physicsShape:
+    - - {x: 0, y: 2}
+      - {x: -1.9021131, y: 0.61803395}
+      - {x: -1.1755704, y: -1.6180341}
+      - {x: 1.1755707, y: -1.6180339}
+      - {x: 1.902113, y: 0.61803424}
   spritePackingTag: 
   userData: 
   assetBundleName: 

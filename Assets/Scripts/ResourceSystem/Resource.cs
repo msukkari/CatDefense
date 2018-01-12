@@ -6,7 +6,7 @@ public class Resource : MonoBehaviour {
 
 	public enum Type { RMetal, ROil, RRubber, Metal, Oil, Rubber };
     public enum State { Blocked, Free }; // Resource is blocked when it is in a machine or is in a raw resource block
-
+    public GameObject linkedResource;
     public Type m_type;
     public State m_state;
 
@@ -23,8 +23,16 @@ public class Resource : MonoBehaviour {
             Debug.Log("ERROR: Attempting to mine a resource that isn't raw!");
             return;
         }
+        else if(!linkedResource)
+        {
+            Debug.Log("ERROR: linked resource was not attached to resource");
+            return;
+        }
 
-        //GameObject fr = 
+
+        GameObject fr = Instantiate(linkedResource);
+        fr.transform.position = transform.position;
+        Destroy(this.gameObject);
     }
 
 }
