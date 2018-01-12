@@ -46,8 +46,8 @@ public class ControllerInputManager : MonoBehaviour {
 	public event ButtonDownEvevnt OnRTDown;
 	public event ButtonDownEvevnt OnLTDown;
 
-	//Axis changes is called only when non zero amount
-	//Call these to get the value of an axis whenever it is non zero
+	//Axis changes is called every update, TODO: should it just when nonzero...?
+	//Call these to get the value of an axis 
 	public delegate void AxisChangeEvent(float amount);
 	public event AxisChangeEvent OnLTChange;
 	public event AxisChangeEvent OnRTChange;
@@ -58,8 +58,7 @@ public class ControllerInputManager : MonoBehaviour {
 	public event AxisChangeEvent OnRSHChange;
 	public event AxisChangeEvent OnRSVChange;
 
-	//Event for sticks, is called only when nonzero amount for one of the axes
-	//Call these when you want to know when either axis of a stick is nonzero
+	//Event for sticks, is called every update
 	public delegate void StickUpdateEvent(float horizontal, float vertical);
 	public event StickUpdateEvent OnLSChange;
 	public event StickUpdateEvent OnRSChange;
@@ -103,38 +102,14 @@ public class ControllerInputManager : MonoBehaviour {
 
 
 		//Right stick update events
-		bool rs_updated = false;
-		if (rs_h !=0 && OnRSHChange!=null)
-		{
-			rs_updated = true;
-			OnRSHChange (rs_h);
-		}
-		if (rs_v !=0 && OnRSVChange!=null)
-		{
-			rs_updated = true;
-			OnRSVChange (rs_v);
-		}
-		if (rs_updated && OnRSChange!=null)
-		{
-			OnRSChange (rs_h, rs_v);
-		}
+        if(OnRSHChange != null) OnRSHChange(rs_h);
+		if(OnRSVChange != null) OnRSVChange(rs_v);
+		if(OnRSChange!=null) OnRSChange(rs_h, rs_v);
 
-		//Left stick update events
-		bool ls_updated = false;
-		if (ls_h !=0 && OnLSChange!=null)
-		{
-			ls_updated = true;
-			OnLSHChange (ls_h);
-		}
-		if (ls_v !=0 && OnLSChange!=null)
-		{
-			ls_updated = true;
-			OnLSVChange (ls_v);
-		}
-		if (ls_updated && OnLSChange!=null)
-		{
-			OnLSChange (ls_h, ls_v);
-		}
+		if(OnLSHChange != null) OnLSHChange(ls_h);
+		if(OnLSVChange != null) OnLSVChange(ls_v);
+		if(OnLSChange!=null) OnLSChange (ls_h, ls_v);
+		
 
 		//Button updates
 		if (OnADown != null && Input.GetButtonDown(getPlayerInputString(A)))
@@ -184,7 +159,7 @@ public class ControllerInputManager : MonoBehaviour {
 			rt_down = false;
 		}  
 
-		if (rt_down && OnRTChange!=null)
+		if (OnRTChange!=null)
 		{
 			OnRTChange (rt_axis);
 		}
@@ -207,7 +182,7 @@ public class ControllerInputManager : MonoBehaviour {
 			lt_down = false;
 		}  
 
-		if (lt_down && OnLTChange!=null)
+		if (OnLTChange!=null)
 		{
 			OnLTChange (lt_axis);
 		}
@@ -219,7 +194,8 @@ public class ControllerInputManager : MonoBehaviour {
 	{
 		if (m_instance == null)
 		{
-			m_instance = new ControllerInputManager ();
+            GameObject g = new GameObject("ControllerInputManager");
+            m_instance = g.AddComponent<ControllerInputManager>();
 		}
 
 		return m_instance;	
@@ -229,7 +205,7 @@ public class ControllerInputManager : MonoBehaviour {
 	#region PrivateMethods
 	private string getPlayerInputString(string input)
 	{
-		return input + platform;
+		return platform + input;
 	}
 
 	#endregion 
