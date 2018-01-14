@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float m_speed;
+    public IInteractable m_curInteract;
     public GameObject neighborObject;
     public GameObject heldResource;
 
@@ -15,21 +16,18 @@ public class PlayerController : MonoBehaviour {
         ControllerInputManager.GetInstance().OnLSChange += Move;
 
         rb = GetComponent<Rigidbody2D>();
+        m_curInteract = null;
         neighborObject = null;
         heldResource = null;
 	}
 	
 	void FixedUpdate () {
+        // This is temporary, allows player to be controlled with keyboard
+        if (Input.GetKeyDown(KeyCode.Space)) Pickup();
 
-        //float y = Input.GetKey(KeyCode.W) ? 1.0f : Input.GetKey(KeyCode.S) ? -1.0f : 0.0f;
-        //float x = Input.GetKey(KeyCode.D) ? 1.0f : Input.GetKey(KeyCode.A) ? -1.0f : 0.0f;
-        //rb.velocity = new Vector2(x * m_speed, y * m_speed);
-
-        //if (Input.GetKeyDown(KeyCode.Space) && neighborObject)
-        //{
-        //    if (neighborObject.tag == "RR") mineRR(neighborObject);
-        //    else if (neighborObject.tag == "Refiner") neighborObject.GetComponent<Refiner>().Refine(heldResource);
-        //}
+        float y = Input.GetKey(KeyCode.W) ? 1.0f : Input.GetKey(KeyCode.S) ? -1.0f : 0.0f;
+        float x = Input.GetKey(KeyCode.D) ? 1.0f : Input.GetKey(KeyCode.A) ? -1.0f : 0.0f;
+        Move(x, y);
     }
 
     public void Move(float x, float y)
@@ -39,6 +37,9 @@ public class PlayerController : MonoBehaviour {
 
     public void Pickup()
     {
+        if (m_curInteract != null) m_curInteract.Interact(heldResource);
+
+        /*
         if(neighborObject)
         {
             if (neighborObject.tag == "RR") mineRR(neighborObject);
@@ -50,7 +51,10 @@ public class PlayerController : MonoBehaviour {
                 else ug.OnBuildUnit();
             }
         }
+        */
     }
+
+    /*
     public void OnCollisionEnter2D(Collision2D coll)
     {
         // NOTE: this might cause issues when player is colliding with two raw resources!
@@ -61,14 +65,24 @@ public class PlayerController : MonoBehaviour {
     {
         neighborObject = null;
     }
+    */
 
     public void OnTriggerEnter2D(Collider2D coll)
     {
+        m_curInteract = coll.gameObject.GetComponent<InteractArea>().m_linkedInteract;
+
+        /*
         coll.transform.parent.transform.parent = transform;
         heldResource = coll.transform.parent.gameObject;
 
         // destory the trigger
         Destroy(coll.transform.gameObject);
+        */
+    }
+
+    public void OnTriggerExit2D(Collider2D coll)
+    {
+        m_curInteract = null;
     }
 
     private void OnAPress()
