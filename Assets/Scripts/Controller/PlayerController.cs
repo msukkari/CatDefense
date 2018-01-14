@@ -43,6 +43,12 @@ public class PlayerController : MonoBehaviour {
         {
             if (neighborObject.tag == "RR") mineRR(neighborObject);
             else if (neighborObject.tag == "Refiner") neighborObject.GetComponent<Refiner>().Refine(heldResource);
+            else if (neighborObject.tag == "Generator")
+            {
+                UnitGenerator ug = neighborObject.GetComponent<UnitGenerator>();
+                if (heldResource) ug.OnAddResource(heldResource);
+                else ug.OnBuildUnit();
+            }
         }
     }
     public void OnCollisionEnter2D(Collision2D coll)
