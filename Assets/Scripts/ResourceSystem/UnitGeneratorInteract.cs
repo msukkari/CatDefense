@@ -6,10 +6,10 @@ public class UnitGeneratorInteract : MonoBehaviour, IInteractable {
 
     public UnitGenerator m_ug;
 
-	void Start () {
+    void Start () {
         m_ug.m_ugInteract = this;
         m_ug.m_interactArea.GetComponent<InteractArea>().m_linkedInteract = this;
-	}
+    }
 	
     public void Interact(GameObject heldResource)
     {
