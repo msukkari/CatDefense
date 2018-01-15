@@ -12,10 +12,11 @@ public class RefinerInteract : MonoBehaviour, IInteractable {
         m_refiner.m_interactArea.GetComponent<InteractArea>().m_linkedInteract = this;
     }
 
-    public void Interact(GameObject heldResource)
+    public void Interact(GameObject player)
     {
         Debug.Log("INTERACTING WITH REFINER");
 
+        GameObject heldResource = player.GetComponent<PlayerController>().heldResource;
         if(heldResource != null)
         {
             GameObject linked = heldResource.GetComponent<Resource>().linkedResource;

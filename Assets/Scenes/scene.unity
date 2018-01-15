@@ -195,7 +195,7 @@ MonoBehaviour:
   prefabList:
   - {fileID: 1937503129696006, guid: 60465cf6f8b29834e826a04df3e329b8, type: 2}
   - {fileID: 1743425377335252, guid: 11cb80b8ac98218459c1604ff7c69b29, type: 2}
-  - {fileID: 1975120006493340, guid: 35f8c032a1f1d4f4689627d47d96749a, type: 2}
+  - {fileID: 1425875016615590, guid: 900012fb4aa619e429dc6b1344365c86, type: 2}
 --- !u!4 &51971652
 Transform:
   m_ObjectHideFlags: 0

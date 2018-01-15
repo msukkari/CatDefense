@@ -11,10 +11,11 @@ public class UnitGeneratorInteract : MonoBehaviour, IInteractable {
         m_ug.m_interactArea.GetComponent<InteractArea>().m_linkedInteract = this;
     }
 	
-    public void Interact(GameObject heldResource)
+    public void Interact(GameObject player)
     {
         Debug.Log("INTERACTING WITH UNIT GENERATOR");
 
+        GameObject heldResource = player.GetComponent<PlayerController>().heldResource;
         if (heldResource != null) // add resource
         {
             Resource r = heldResource.GetComponent<Resource>();

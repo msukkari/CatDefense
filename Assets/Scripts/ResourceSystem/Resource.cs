@@ -10,6 +10,9 @@ public class Resource : MonoBehaviour {
     public Type m_type;
     public State m_state;
 
+    public GameObject m_interactArea;
+    public IInteractable m_rrInteractable;
+
     public Resource(Type type, State state)
     {
         m_type = type;

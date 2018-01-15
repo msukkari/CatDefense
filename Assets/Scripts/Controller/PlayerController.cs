@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour {
 
     public void Pickup()
     {
-        if (m_curInteract != null) m_curInteract.Interact(heldResource);
+        if (m_curInteract != null) m_curInteract.Interact(gameObject);
 
         /*
         if(neighborObject)
@@ -69,8 +69,16 @@ public class PlayerController : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D coll)
     {
-        m_curInteract = coll.gameObject.GetComponent<InteractArea>().m_linkedInteract;
+        InteractArea ia = coll.gameObject.GetComponent<InteractArea>();
 
+        if(ia == null)
+        {
+            Debug.Log("InteractArea not found!");
+            return;
+        }
+
+        m_curInteract = coll.gameObject.GetComponent<InteractArea>().m_linkedInteract;
+        Debug.Log("OnTriggerEnter2D: " + m_curInteract.ToString());
         /*
         coll.transform.parent.transform.parent = transform;
         heldResource = coll.transform.parent.gameObject;

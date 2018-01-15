@@ -37,9 +37,27 @@ GameObject:
   - component: {fileID: 4872205128670276}
   - component: {fileID: 61364956495012304}
   - component: {fileID: 114313363021530670}
+  - component: {fileID: 114478927863969064}
   m_Layer: 0
   m_Name: RawOilOre
   m_TagString: RR
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1835333215638858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4278487694547676}
+  - component: {fileID: 58416986610323364}
+  - component: {fileID: 114699611049391254}
+  m_Layer: 0
+  m_Name: InteractArea
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,6 +75,19 @@ Transform:
   m_Father: {fileID: 4872205128670276}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4278487694547676
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835333215638858}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.06, y: 0.32, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4872205128670276}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4872205128670276
 Transform:
   m_ObjectHideFlags: 1
@@ -64,13 +95,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1743425377335252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.88, y: -0.67, z: 0}
+  m_LocalPosition: {x: 2.36, y: 2.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4114703685358008}
+  - {fileID: 4278487694547676}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58416986610323364
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835333215638858}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.99
 --- !u!61 &61364956495012304
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -111,6 +158,30 @@ MonoBehaviour:
     type: 2}
   m_type: 1
   m_state: 0
+  m_interactArea: {fileID: 1835333215638858}
+--- !u!114 &114478927863969064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743425377335252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf926d0c611165643854f4e5bfe8077a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_r: {fileID: 114313363021530670}
+--- !u!114 &114699611049391254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1835333215638858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd81b3f66dd63a479b590f92769d5a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212627980183469290
 SpriteRenderer:
   m_ObjectHideFlags: 1
