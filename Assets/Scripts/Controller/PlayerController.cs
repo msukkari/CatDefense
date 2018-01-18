@@ -24,14 +24,16 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
         // This is temporary, allows player to be controlled with keyboard
         if (Input.GetKeyDown(KeyCode.Space)) Pickup();
-
-        float y = Input.GetKey(KeyCode.W) ? 1.0f : Input.GetKey(KeyCode.S) ? -1.0f : 0.0f;
-        float x = Input.GetKey(KeyCode.D) ? 1.0f : Input.GetKey(KeyCode.A) ? -1.0f : 0.0f;
-        Move(x, y);
     }
 
     public void Move(float x, float y)
     {
+		//Temporary so we can use keyboard input as well
+		if (x == 0 && y == 0)
+		{
+	        y = Input.GetKey(KeyCode.W) ? 1.0f : Input.GetKey(KeyCode.S) ? -1.0f : 0.0f;
+	        x = Input.GetKey(KeyCode.D) ? 1.0f : Input.GetKey(KeyCode.A) ? -1.0f : 0.0f;
+		}
         rb.velocity = new Vector2(x * m_speed, y * m_speed);
     }
 
