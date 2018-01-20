@@ -85,11 +85,14 @@ public class UnitAIBehaviour : MonoBehaviour {
 		case AIState.ChaseMain:
 			{
 				//Only get interupted if you were looking for a main target.
-				if (col!=null)
+				if (col != null)
 				{
 					m_state = AIState.FindSecond;
+				} else if (m_currentTarget == null)
+				{
+					m_state = AIState.FindMain;
 				}
-				else if (m_currentTarget == null || Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) <= MainAttackRange)
+					else if(Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) <= MainAttackRange)
 				{
 					m_state = AIState.AttackMain;
 				}
@@ -123,7 +126,11 @@ public class UnitAIBehaviour : MonoBehaviour {
 			}
 		case AIState.ChaseSecond:
 			{
-				if (m_currentTarget == null || Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) <= InteruptAttackRange)
+				if (m_currentTarget == null)
+				{
+					m_state = AIState.FindMain;
+				}
+				else if ( Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) <= InteruptAttackRange)
 				{
 					m_state = AIState.AttackSecond;
 				} 
