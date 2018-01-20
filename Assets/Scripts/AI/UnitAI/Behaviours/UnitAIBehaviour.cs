@@ -227,4 +227,15 @@ public class UnitAIBehaviour : MonoBehaviour {
 
 		return res;
 	}
+
+
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere (this.transform.position, MainAttackRange);
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere (this.transform.position, InteruptRange);
+		Gizmos.color = Color.blue;
+		Gizmos.DrawWireSphere (this.transform.position, InteruptAttackRange);
+	}
 }

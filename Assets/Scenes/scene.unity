@@ -506,7 +506,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1926488381365546, guid: 05ade6f6c9de04d46ad60cb24e80f3c0, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152214191621050, guid: 05ade6f6c9de04d46ad60cb24e80f3c0,
+        type: 2}
+      propertyPath: MainAttackRange
+      value: 3.21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05ade6f6c9de04d46ad60cb24e80f3c0, type: 2}
