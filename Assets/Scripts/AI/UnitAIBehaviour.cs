@@ -64,24 +64,32 @@ public class UnitAIBehaviour : MonoBehaviour {
 	private void UpdateState()
 	{
 		Collider2D col = Physics2D.OverlapCircle ((Vector2)this.transform.position, InteruptRange, InteruptTargets);
-		if (col!=null)
-		{
-			m_state = AIState.FindSecond;
-		}
 
 		switch (m_state)
 		{
 		case AIState.FindMain:
 			{
-				if (m_currentTarget != null && ObjectInMask (m_currentTarget.gameObject, MainTarget))
+				//Only get interupted if you were looking for a main target.
+				if (col != null)
+				{
+					m_state = AIState.FindSecond;
+				} else if (m_currentTarget != null && ObjectInMask (m_currentTarget.gameObject, MainTarget))
 				{
 					m_state = AIState.ChaseMain;
+				} else
+				{
+					//Should you try to find a secondary target? ATM we just stay put doing nothing
 				}
 				break;
 			}
 		case AIState.ChaseMain:
 			{
-				if (m_currentTarget == null || Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) <= MainAttackRange)
+				//Only get interupted if you were looking for a main target.
+				if (col!=null)
+				{
+					m_state = AIState.FindSecond;
+				}
+				else if (m_currentTarget == null || Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) <= MainAttackRange)
 				{
 					m_state = AIState.AttackMain;
 				}
@@ -89,9 +97,19 @@ public class UnitAIBehaviour : MonoBehaviour {
 			}
 		case AIState.AttackMain:
 			{
-				if (m_currentTarget == null)
+				//Only get interupted if you were looking for a main target.
+				if (col!=null)
+				{
+					m_state = AIState.FindSecond;
+				}
+				else if (m_currentTarget == null)
 				{
 					m_state = AIState.FindMain;
+				}
+				else if (Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) > InteruptAttackRange)
+				{
+					//Target moved out of position, start chasing again
+					m_state = AIState.ChaseMain;
 				}
 				break;
 			}
@@ -116,6 +134,10 @@ public class UnitAIBehaviour : MonoBehaviour {
 				if (m_currentTarget == null)
 				{
 					m_state = AIState.FindMain;
+				} else if (Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) > InteruptAttackRange)
+				{
+					//Target moved out of position, start chasing again
+					m_state = AIState.ChaseSecond;
 				}
 				break;
 			}
@@ -153,6 +175,7 @@ public class UnitAIBehaviour : MonoBehaviour {
 			}
 		case AIState.AttackSecond:
 			{
+				m_rb.velocity = Vector2.zero;
 				//Do Attack Second
 				if(OtherAttack!=null)
 					OtherAttack.Execute();

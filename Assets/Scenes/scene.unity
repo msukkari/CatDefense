@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 320577026}
   - component: {fileID: 320577027}
   - component: {fileID: 320577028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: InteractArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,6 +588,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1943316024793566, guid: 5e1d2210850befd49acf09351ea0d4ae, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e1d2210850befd49acf09351ea0d4ae, type: 2}
   m_IsPrefabParent: 0
@@ -784,7 +788,8 @@ GameObject:
   - component: {fileID: 1039053506}
   - component: {fileID: 1039053504}
   - component: {fileID: 1039053505}
-  m_Layer: 0
+  - component: {fileID: 1039053507}
+  m_Layer: 9
   m_Name: UnitGenerator
   m_TagString: Generator
   m_Icon: {fileID: 0}
@@ -916,6 +921,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ug: {fileID: 1039053501}
+--- !u!114 &1039053507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1039053500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8e9af72f8ca4ba2b77380a1b34bc3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  m_health: 0
 --- !u!1001 &1056745055
 Prefab:
   m_ObjectHideFlags: 0
@@ -975,7 +993,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1141467631}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1271,13 +1289,13 @@ GameObject:
   - component: {fileID: 1376111917}
   - component: {fileID: 1376111916}
   - component: {fileID: 1376111915}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Friendly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &1376111915
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1321,7 +1339,7 @@ MonoBehaviour:
   TargetPriority: 5
   MainTarget:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   MainAttackRange: 1
   MainAttack: {fileID: 1376111916}
   InteruptTargets:
@@ -1521,14 +1539,14 @@ MonoBehaviour:
   TargetPriority: 5
   MainTarget:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 512
   MainAttackRange: 1
   MainAttack: {fileID: 1425313960}
   InteruptTargets:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   InteruptRange: 2
-  InteruptAttackRange: 1
+  InteruptAttackRange: 5
   OtherAttack: {fileID: 0}
 --- !u!114 &1425313964
 MonoBehaviour:
