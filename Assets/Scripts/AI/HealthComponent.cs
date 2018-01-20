@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthComponent : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class HealthComponent : MonoBehaviour {
 	public float maxHealth = 10.0f;
 
 	public float m_health;
+
+	public RectTransform HealthBarUI;
 
 	public void Start()
 	{
@@ -28,6 +31,10 @@ public class HealthComponent : MonoBehaviour {
 	}
 
 	private void CheckHealth(){
+		if (HealthBarUI != null)
+		{
+			HealthBarUI.localScale = new Vector3 ((m_health / maxHealth), HealthBarUI.localScale.y, HealthBarUI.localScale.z);
+		}
 		if (m_health <= 0)
 		{
 			Destroy (this.gameObject);
@@ -36,6 +43,6 @@ public class HealthComponent : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+		CheckHealth ();
 	}
 }
