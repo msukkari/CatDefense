@@ -158,6 +158,12 @@ public class UnitAIBehaviour : MonoBehaviour {
 		case AIState.ChaseSecond:
 			{
 				m_rb.velocity = ((Vector2)(m_currentTarget.transform.position - this.transform.position)).normalized * speed;
+				//Update orientation
+				if (m_rb.velocity != Vector2.zero)
+				{
+					float angle = Mathf.Atan2 (m_rb.velocity.y, m_rb.velocity.x) * Mathf.Rad2Deg;
+					m_rb.transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
+				}
 				break;
 			}
 		case AIState.AttackMain:
