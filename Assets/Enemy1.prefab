@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 114152214191621050}
   - component: {fileID: 114654774155416960}
   - component: {fileID: 58016046877731828}
+  - component: {fileID: 114653476402913692}
   m_Layer: 8
   m_Name: Enemy1
   m_TagString: Untagged
@@ -191,8 +192,8 @@ MonoBehaviour:
   MainTarget:
     serializedVersion: 2
     m_Bits: 512
-  MainAttackRange: 3
-  MainAttack: {fileID: 114654774155416960}
+  MainAttackRange: 7
+  MainAttack: {fileID: 114653476402913692}
   InteruptTargets:
     serializedVersion: 2
     m_Bits: 1024
@@ -250,6 +251,19 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114653476402913692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1926488381365546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c585d067e9b414a73af69cb8057bae6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 114534255478579646, guid: 9178965a2d0f040599d03cc21108dc85, type: 2}
+  fireRate: 1
 --- !u!114 &114654774155416960
 MonoBehaviour:
   m_ObjectHideFlags: 1

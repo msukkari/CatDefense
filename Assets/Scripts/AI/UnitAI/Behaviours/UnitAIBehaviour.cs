@@ -92,7 +92,7 @@ public class UnitAIBehaviour : MonoBehaviour {
 				{
 					m_state = AIState.FindMain;
 				}
-					else if(Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) <= MainAttackRange)
+				else if(Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) <= MainAttackRange)
 				{
 					m_state = AIState.AttackMain;
 				}
@@ -109,7 +109,7 @@ public class UnitAIBehaviour : MonoBehaviour {
 				{
 					m_state = AIState.FindMain;
 				}
-				else if (Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) > InteruptAttackRange)
+				else if (Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) > MainAttackRange)
 				{
 					//Target moved out of position, start chasing again
 					m_state = AIState.ChaseMain;
@@ -180,9 +180,9 @@ public class UnitAIBehaviour : MonoBehaviour {
 			}
 		case AIState.AttackMain:
 			{
-				//Do Attack Main
+				m_rb.velocity = Vector2.zero;
 				if(MainAttack!=null)
-					MainAttack.Execute();
+					MainAttack.Execute(m_currentTarget);
 				break;
 			}
 		case AIState.FindSecond:
@@ -196,7 +196,7 @@ public class UnitAIBehaviour : MonoBehaviour {
 				m_rb.velocity = Vector2.zero;
 				//Do Attack Second
 				if(OtherAttack!=null)
-					OtherAttack.Execute();
+					OtherAttack.Execute(m_currentTarget);
 				break;
 			}
 		}
