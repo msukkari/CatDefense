@@ -12,7 +12,7 @@ public class SelfDestruct : AbAttack {
 		Collider2D[] hit = Physics2D.OverlapCircleAll ((Vector2)this.transform.position, range);
 		foreach (Collider2D c in hit)
 		{
-			HealthComponent h = c.transform.root.GetComponentInChildren<HealthComponent> ();
+			HealthComponent h = c.gameObject.GetComponent<HealthComponent> ();
 			if (h != null)
 			{
 				h.Damage (damage);
@@ -22,7 +22,7 @@ public class SelfDestruct : AbAttack {
 		HealthComponent self = this.GetComponent<HealthComponent> ();
 		if (self != null)
 		{
-			self.Damage (self.maxHealth);
+			self.Kill ();
 		} else
 		{
 			Destroy (this.gameObject);
