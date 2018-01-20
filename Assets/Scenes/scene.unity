@@ -589,7 +589,7 @@ Transform:
   m_GameObject: {fileID: 716280857}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 7.39}
-  m_LocalScale: {x: 13, y: 9, z: 4.03217}
+  m_LocalScale: {x: 13, y: 12, z: 4.03217}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -724,7 +724,7 @@ Prefab:
     - target: {fileID: 224274248501099020, guid: 39a7d1c985f7544739c030bc907bbaf9,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 820
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224274248501099020, guid: 39a7d1c985f7544739c030bc907bbaf9,
         type: 2}
@@ -773,22 +773,22 @@ Prefab:
     - target: {fileID: 224274248501099020, guid: 39a7d1c985f7544739c030bc907bbaf9,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224274248501099020, guid: 39a7d1c985f7544739c030bc907bbaf9,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224274248501099020, guid: 39a7d1c985f7544739c030bc907bbaf9,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224274248501099020, guid: 39a7d1c985f7544739c030bc907bbaf9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39a7d1c985f7544739c030bc907bbaf9, type: 2}
@@ -1641,7 +1641,7 @@ MonoBehaviour:
   MainTarget:
     serializedVersion: 2
     m_Bits: 512
-  MainAttackRange: 1
+  MainAttackRange: 3
   MainAttack: {fileID: 1425313960}
   InteruptTargets:
     serializedVersion: 2
@@ -1841,6 +1841,7 @@ GameObject:
   - component: {fileID: 2092948268}
   - component: {fileID: 2092948267}
   - component: {fileID: 2092948266}
+  - component: {fileID: 2092948271}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1918,3 +1919,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2092948271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2092948265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389ee71795b0a4cedb67943e47894af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves: []
