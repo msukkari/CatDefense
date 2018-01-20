@@ -12,6 +12,10 @@ public class HealthComponent : MonoBehaviour {
 
 	public RectTransform HealthBarUI;
 
+
+	public delegate void DeathEvent();
+	public event DeathEvent OnDeath;
+
 	public void Start()
 	{
 		m_health = maxHealth;
@@ -37,12 +41,21 @@ public class HealthComponent : MonoBehaviour {
 		}
 		if (m_health <= 0)
 		{
-			Destroy (this.gameObject);
+			Kill ();
 		} 
 	}
 
 	// Update is called once per frame
 	void Update () {
 		CheckHealth ();
+	}
+
+	public void Kill()
+	{
+		if (OnDeath != null)
+		{
+			OnDeath ();
+		}
+		Destroy (this.gameObject);
 	}
 }
