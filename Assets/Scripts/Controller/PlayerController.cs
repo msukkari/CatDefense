@@ -11,14 +11,26 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody2D rb;
 
+	private ControllerInputManager m_controllerInstance;
+
 	void Start () {
-        ControllerInputManager.GetInstance().OnADown += Pickup;
-        ControllerInputManager.GetInstance().OnLSChange += Move;
+		m_controllerInstance = ControllerInputManager.GetInstance ();
+		m_controllerInstance.OnADown += Pickup;
+		m_controllerInstance.OnLSChange += Move;
 
         rb = GetComponent<Rigidbody2D>();
         m_curInteract = null;
         neighborObject = null;
         heldResource = null;
+	}
+
+	void OnDestroy()
+	{
+		if (m_controllerInstance != null)
+		{
+			m_controllerInstance.OnADown -= Pickup;
+			m_controllerInstance.OnLSChange -= Move;
+		}
 	}
 	
 	void FixedUpdate () {
