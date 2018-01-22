@@ -200,6 +200,32 @@ public class UnitAIBehaviour : MonoBehaviour {
 				break;
 			}
 		}
+
+		Animator anim = this.GetComponent<Animator> ();
+		if (anim != null)
+		{
+			if (m_rb.velocity.magnitude != 0)
+			{
+				float dir = Vector2.Dot (m_rb.velocity, Vector2.right);
+				if (dir > 0)
+				{
+					anim.SetBool ("Right", true);
+					anim.SetBool ("Left", false);
+					anim.SetBool ("Still", false);
+				} else
+				{
+					anim.SetBool ("Right", false);
+					anim.SetBool ("Left", true);
+					anim.SetBool ("Still", false);
+				}
+			} else
+			{
+				anim.SetBool ("Right", false);
+				anim.SetBool ("Left", false);
+				anim.SetBool ("Still", true);
+			}
+		}
+
 	}
 
 	private bool ObjectInMask(GameObject ob, LayerMask l)

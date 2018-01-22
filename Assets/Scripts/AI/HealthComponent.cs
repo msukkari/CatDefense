@@ -35,6 +35,13 @@ public class HealthComponent : MonoBehaviour {
 	}
 
 	private void CheckHealth(){
+
+		Animator anim = this.GetComponent<Animator> ();
+		if (anim != null)
+		{
+			anim.SetFloat ("Health", m_health/maxHealth);	
+		}
+
 		if (HealthBarUI != null)
 		{
 			HealthBarUI.localScale = new Vector3 ((m_health / maxHealth), HealthBarUI.localScale.y, HealthBarUI.localScale.z);
