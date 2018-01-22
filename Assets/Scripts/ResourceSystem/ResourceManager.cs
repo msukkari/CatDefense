@@ -7,11 +7,11 @@ public class ResourceManager : MonoBehaviour
 
     public GameObject spawnPointParent;
     public List<GameObject> prefabList;
+    public int numSpawnedRRs;
 
     // RR refers to raw resource
     private List<GameObject> RRList;
     private List<GameObject> spawnPointList;
-    private int numSpawnedRRs;
     private float counter;
 
 
@@ -44,6 +44,7 @@ public class ResourceManager : MonoBehaviour
                 while (sp.hasResource) sp = spawnPointList[Random.Range(0, spawnPointList.Count)].GetComponent<SpawnPoint>();
 
                 resource.transform.position = sp.transform.position;
+                resource.GetComponent<Resource>().m_spawnPoint = sp;
                 sp.hasResource = true;
                 sp.curResource = resource;
 

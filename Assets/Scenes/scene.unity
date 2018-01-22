@@ -196,6 +196,7 @@ MonoBehaviour:
   - {fileID: 1937503129696006, guid: 60465cf6f8b29834e826a04df3e329b8, type: 2}
   - {fileID: 1743425377335252, guid: 11cb80b8ac98218459c1604ff7c69b29, type: 2}
   - {fileID: 1425875016615590, guid: 900012fb4aa619e429dc6b1344365c86, type: 2}
+  numSpawnedRRs: 0
 --- !u!4 &51971652
 Transform:
   m_ObjectHideFlags: 0
@@ -630,7 +631,7 @@ Prefab:
     - target: {fileID: 58100854892087078, guid: 5e1d2210850befd49acf09351ea0d4ae,
         type: 2}
       propertyPath: m_Radius
-      value: 2
+      value: 3.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e1d2210850befd49acf09351ea0d4ae, type: 2}
@@ -1371,7 +1372,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 3.45
 --- !u!4 &1331933476
 Transform:
   m_ObjectHideFlags: 0
@@ -1384,7 +1385,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1771662491}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1506849102
 Prefab:
@@ -1676,8 +1677,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1331933476}
   - {fileID: 2023358769}
+  - {fileID: 1331933476}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

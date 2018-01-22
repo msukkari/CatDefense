@@ -13,6 +13,14 @@ public class Resource : MonoBehaviour {
     public GameObject m_interactArea;
     public IInteractable m_rrInteractable;
 
+    public SpawnPoint m_spawnPoint;
+    public ResourceManager m_resourceManager;
+
+    public void Start()
+    {
+        m_resourceManager = GameObject.Find("ResourceManager").GetComponent<ResourceManager>();
+    }
+
     public Resource(Type type, State state)
     {
         m_type = type;
