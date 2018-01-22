@@ -8,7 +8,7 @@ public class RangedAttack : AbAttack {
 	public float fireRate;
 
 	private float lastFire = 0;
-	public override void Execute (HealthComponent target, LayerMask layer)
+	public override void Execute (HealthComponent target)
 	{
 		if ((Time.time - lastFire) >= fireRate)
 		{

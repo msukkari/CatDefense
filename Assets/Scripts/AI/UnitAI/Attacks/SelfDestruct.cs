@@ -6,15 +6,16 @@ public class SelfDestruct : AbAttack {
 
 	public float range;
 	public float damage;
+	public LayerMask layerTarget;
 
-	public override void Execute (HealthComponent t, LayerMask layer)
+	public override void Execute (HealthComponent t)
 	{
 		Collider2D[] hit = Physics2D.OverlapCircleAll ((Vector2)this.transform.position, range);
 		
 		foreach (Collider2D c in hit)
 		{
 			HealthComponent h = c.gameObject.GetComponent<HealthComponent> ();
-			if (h != null && UnitAIBehaviour.ObjectInMask(h.gameObject,layer))
+			if (h != null && UnitAIBehaviour.ObjectInMask(h.gameObject,layerTarget))
 			{
 				h.Damage (damage);
 			}
