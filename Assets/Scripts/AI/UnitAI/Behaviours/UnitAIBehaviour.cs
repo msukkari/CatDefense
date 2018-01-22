@@ -38,6 +38,9 @@ public class UnitAIBehaviour : MonoBehaviour {
 	public float InteruptAttackRange = 1.0f;
 	public AbAttack OtherAttack;
 
+	public bool flipOnBack = false;
+	public bool flipXOnBack = false;
+	public bool freezeRotationVertical = false;
 	#endregion
 
 	#region AI
@@ -165,13 +168,24 @@ public class UnitAIBehaviour : MonoBehaviour {
 		case AIState.ChaseSecond:
 			{
 				Vector2 newVelocity =((Vector2)(m_currentTarget.transform.position - this.transform.position)).normalized * speed;
+
 				if (m_rb.velocity != newVelocity)
 				{
 					m_rb.velocity = newVelocity;
+
+
 					//Update orientation
 					if (newVelocity != Vector2.zero)
 					{
-						float angle = Mathf.Atan2 (newVelocity.y, newVelocity.x) * Mathf.Rad2Deg;
+						float angle = 0;
+						if (flipOnBack && newVelocity.x < 0)
+						{
+							angle = Mathf.Atan2 (-1.0f*newVelocity.y, -1.0f*newVelocity.x) * Mathf.Rad2Deg;
+						} else
+						{
+							angle = Mathf.Atan2 (newVelocity.y,newVelocity.x) * Mathf.Rad2Deg;
+						}
+
 						m_rb.transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
 					}
 				}
@@ -183,6 +197,7 @@ public class UnitAIBehaviour : MonoBehaviour {
 				m_rb.velocity = Vector2.zero;
 				if(MainAttack!=null)
 					MainAttack.Execute(m_currentTarget);
+				return;
 				break;
 			}
 		case AIState.FindSecond:
@@ -197,32 +212,65 @@ public class UnitAIBehaviour : MonoBehaviour {
 				//Do Attack Second
 				if(OtherAttack!=null)
 					OtherAttack.Execute(m_currentTarget);
+
+				return;
 				break;
 			}
 		}
+
 
 		Animator anim = this.GetComponent<Animator> ();
 		if (anim != null)
 		{
 			if (m_rb.velocity.magnitude != 0)
 			{
-				float dir = Vector2.Dot (m_rb.velocity, Vector2.right);
-				if (dir > 0)
+				anim.SetBool ("Right", false);
+				anim.SetBool ("Left", false);
+				anim.SetBool ("Up", false);
+				anim.SetBool ("Down", false);
+
+				float rightDir = Vector2.Dot (m_rb.velocity.normalized, Vector2.right);
+				if (rightDir > 0)
 				{
 					anim.SetBool ("Right", true);
 					anim.SetBool ("Left", false);
-					anim.SetBool ("Still", false);
 				} else
 				{
 					anim.SetBool ("Right", false);
 					anim.SetBool ("Left", true);
-					anim.SetBool ("Still", false);
+				}
+
+				float upDir = Vector2.Dot (m_rb.velocity.normalized, Vector2.up);
+				if (upDir > 0.5f)
+				{
+					if(freezeRotationVertical)
+						this.transform.rotation = Quaternion.identity;
+					
+					anim.SetBool ("Right", false);
+					anim.SetBool ("Left", false);
+					anim.SetBool ("Up", true);
+					anim.SetBool ("Down", false);
+
+				} else if (upDir < -0.5f)
+				{
+					if(freezeRotationVertical)
+						this.transform.rotation = Quaternion.identity;
+					
+					anim.SetBool ("Right", false);
+					anim.SetBool ("Left", false);
+					anim.SetBool ("Up", false);
+					anim.SetBool ("Down", true);
+				} else
+				{
+					anim.SetBool ("Up", false);
+					anim.SetBool ("Down", false);
 				}
 			} else
 			{
 				anim.SetBool ("Right", false);
 				anim.SetBool ("Left", false);
-				anim.SetBool ("Still", true);
+				anim.SetBool ("Up", false);
+				anim.SetBool ("Down", true);
 			}
 		}
 
