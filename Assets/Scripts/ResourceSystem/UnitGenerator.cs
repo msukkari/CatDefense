@@ -37,4 +37,13 @@ public class UnitGenerator : MonoBehaviour {
         m_curResources = Vector3.zero;
 		m_spriteRenderer = GetComponent<SpriteRenderer>();
 	}
+
+	public void Update()
+	{
+		Animator anim = this.GetComponent<Animator> ();
+		if (anim != null)
+		{
+			anim.SetInteger ("State",(int)( m_curResources.x + m_curResources.y + m_curResources.z));
+		}
+	}
 }

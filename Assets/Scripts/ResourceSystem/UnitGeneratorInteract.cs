@@ -5,6 +5,7 @@ using UnityEngine;
 public class UnitGeneratorInteract : MonoBehaviour, IInteractable {
 
     public UnitGenerator m_ug;
+	public RecipeUI m_ui;
 
     void Start () {
         m_ug.m_ugInteract = this;
@@ -14,12 +15,14 @@ public class UnitGeneratorInteract : MonoBehaviour, IInteractable {
 	public void onTriggerEnter()
 	{
 		m_ug.m_curResources = Vector3.zero;
-		m_ug.m_spriteRenderer.color = Color.red;
+		//m_ug.m_spriteRenderer.color = Color.red;
 	}
 
 	public void onTriggerExit()
 	{
 		m_ug.m_spriteRenderer.color = Color.white;
+		m_ug.m_curResources = Vector3.zero;
+		m_ui.ClearRecipe ();
 	}
 
 	public void Interact(GameObject player, Button button)
@@ -30,18 +33,23 @@ public class UnitGeneratorInteract : MonoBehaviour, IInteractable {
 		// Vector3[metal, oil, rubber]
 		if(button == Button.X)
 		{
+			m_ui.AddElement (0);
 			m_ug.m_curResources.x++;
 		}
 		else if(button == Button.Y)
 		{
+			m_ui.AddElement (1);
 			m_ug.m_curResources.y++;
 		}
 		else if(button == Button.B)
 		{
+			m_ui.AddElement (2);
 			m_ug.m_curResources.z++;
 		}
 		else if(button == Button.A)
 		{
+			m_ui.ClearRecipe ();
+
 			if(!m_ug.m_recipeMap.ContainsKey(m_ug.m_curResources))
 			{
 				Debug.Log("recipe not found");
