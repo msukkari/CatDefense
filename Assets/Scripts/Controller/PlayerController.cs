@@ -74,15 +74,21 @@ public class PlayerController : MonoBehaviour {
         }
 
         m_curInteract = coll.gameObject.GetComponent<InteractArea>().m_linkedInteract;
-        Debug.Log("OnTriggerEnter2D: " + m_curInteract.ToString());
+		if (m_curInteract != null)
+		{
+			m_curInteract.onTriggerEnter();
+			Debug.Log("OnTriggerEnter2D: " + m_curInteract.ToString());
+		}
 
-		m_curInteract.onTriggerEnter();
     }
 
     public void OnTriggerExit2D(Collider2D coll)
     {
-		m_curInteract.onTriggerExit();
-        m_curInteract = null;
+		if (m_curInteract != null)
+		{
+			m_curInteract.onTriggerExit();
+			m_curInteract = null;
+		}
     }
 
     private void OnAPress()
