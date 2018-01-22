@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224007868955053244}
   m_Layer: 5
-  m_Name: MetalElement
+  m_Name: FishElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 07c21e80471e4c4488602f2354b01232, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ebf3af16dd4724757b01b6fb202e17de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224200849955786132}
   m_Layer: 5
-  m_Name: RubberElement
+  m_Name: YarnElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 08d82fc09c82eea42a2faae58b305fab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89ed8c3269f0b401fa0b5ffaa0d17c38, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
