@@ -12,11 +12,24 @@ public class ResourceInteract : MonoBehaviour, IInteractable {
         m_r.m_interactArea.GetComponent<InteractArea>().m_linkedInteract = this;
     }
 
-    public void Interact(GameObject player)
-    {
-        PlayerController p = player.GetComponent<PlayerController>();
+	public void onTriggerEnter()
+	{
 
-        p.heldResource = m_r.gameObject;
-        m_r.gameObject.transform.parent = player.transform;
+	}
+
+	public void onTriggerExit()
+	{
+
+	}
+
+	public void Interact(GameObject player, Button button)
+    {
+		if(button == Button.A)
+		{
+	        PlayerController p = player.GetComponent<PlayerController>();
+
+	        p.heldResource = m_r.gameObject;
+	        m_r.gameObject.transform.parent = player.transform;
+		}
     }
 }

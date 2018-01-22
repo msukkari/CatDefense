@@ -10,23 +10,36 @@ public class ResourceDepositInteract : MonoBehaviour, IInteractable {
         m_rd.m_ugInteract = this;
         m_rd.m_interactArea.GetComponent<InteractArea>().m_linkedInteract = this;
     }
+
+	public void onTriggerEnter()
+	{
+
+	}
+
+	public void onTriggerExit()
+	{
+
+	}
 	
-	public void Interact(GameObject player)
+	public void Interact(GameObject player, Button button)
     {
-        GameObject heldResource = player.GetComponent<PlayerController>().heldResource;
-        Player p = player.GetComponent<Player>();
+		if(button == Button.A)
+		{
+	        GameObject heldResource = player.GetComponent<PlayerController>().heldResource;
+	        Player p = player.GetComponent<Player>();
 
-        if(heldResource)
-        {
-            Resource resource = heldResource.GetComponent<Resource>();
-            if(resource)
-            {
-                if (resource.m_type == Resource.Type.Metal) p.metal++;
-                else if(resource.m_type == Resource.Type.Oil) p.oil++;
-                else if (resource.m_type == Resource.Type.Rubber) p.rubber++;
-            }
+	        if(heldResource)
+	        {
+	            Resource resource = heldResource.GetComponent<Resource>();
+	            if(resource)
+	            {
+	                if (resource.m_type == Resource.Type.Metal) p.metal++;
+	                else if(resource.m_type == Resource.Type.Oil) p.oil++;
+	                else if (resource.m_type == Resource.Type.Rubber) p.rubber++;
+	            }
 
-            Destroy(heldResource);
-        }
+	            Destroy(heldResource);
+	        }
+		}
     }
 }

@@ -11,18 +11,31 @@ public class RawResourceInteract : MonoBehaviour, IInteractable {
         m_r.m_interactArea.GetComponent<InteractArea>().m_linkedInteract = this;
     }
 
-	public void Interact(GameObject player)
+	public void onTriggerEnter()
+	{
+
+	}
+
+	public void onTriggerExit()
+	{
+
+	}
+
+	public void Interact(GameObject player, Button button)
     {   
-        if (!m_r.linkedResource)
-        {
-            Debug.Log("ERROR: linked resource was not attached to resource");
-            return;
-        }
+		if(button == Button.A)
+		{
+	        if (!m_r.linkedResource)
+	        {
+	            Debug.Log("ERROR: linked resource was not attached to resource");
+	            return;
+	        }
 
 
-        GameObject fr = Instantiate(m_r.linkedResource);
-        fr.transform.position = m_r.transform.position;
-        Destroy(m_r.gameObject);
-    }
+	        GameObject fr = Instantiate(m_r.linkedResource);
+	        fr.transform.position = m_r.transform.position;
+	        Destroy(m_r.gameObject);
+		}
+
+	}
 }
-    

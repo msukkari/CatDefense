@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Button {A, X, Y, B};
 public interface IInteractable
 {
-    void Interact(GameObject player);
+	void onTriggerEnter();
+	void onTriggerExit();
+    void Interact(GameObject player, Button button);
 }
 
 public class InteractArea : MonoBehaviour {

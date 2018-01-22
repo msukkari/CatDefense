@@ -12,18 +12,31 @@ public class RefinerInteract : MonoBehaviour, IInteractable {
         m_refiner.m_interactArea.GetComponent<InteractArea>().m_linkedInteract = this;
     }
 
-    public void Interact(GameObject player)
+	public void onTriggerEnter()
+	{
+
+	}
+
+	public void onTriggerExit()
+	{
+
+	}
+
+    public void Interact(GameObject player, Button button)
     {
-        Debug.Log("INTERACTING WITH REFINER");
+		if(button == Button.A)
+		{
+			Debug.Log("INTERACTING WITH REFINER");
 
-        GameObject heldResource = player.GetComponent<PlayerController>().heldResource;
-        if(heldResource != null)
-        {
-            GameObject linked = heldResource.GetComponent<Resource>().linkedResource;
-            Destroy(heldResource);
+	        GameObject heldResource = player.GetComponent<PlayerController>().heldResource;
+	        if(heldResource != null)
+	        {
+	            GameObject linked = heldResource.GetComponent<Resource>().linkedResource;
+	            Destroy(heldResource);
 
-            StartCoroutine(RefineCoRoutine(linked));
-        }
+	            StartCoroutine(RefineCoRoutine(linked));
+	        }
+		}
     }
 
     private IEnumerator RefineCoRoutine(GameObject linkedResource)
