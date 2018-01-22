@@ -78,8 +78,9 @@ MonoBehaviour:
   MetalIcon: {fileID: 224007868955053244, guid: e193c53b417564af78ce60df75340811,
     type: 2}
   holder: {fileID: 224613769707588358}
-  widthIcon: 50
-  padding: 10
+  widthElement: 50
+  iconWidth: 40
+  padding: 20
 --- !u!114 &114849874297748338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,8 +154,8 @@ RectTransform:
   m_Father: {fileID: 224089935889795818}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -285}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
