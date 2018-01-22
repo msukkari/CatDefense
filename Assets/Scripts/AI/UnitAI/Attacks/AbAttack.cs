@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class AbAttack : MonoBehaviour {
 
-	public abstract void Execute(HealthComponent target);
+	public abstract void Execute(HealthComponent target, LayerMask layer);
 }

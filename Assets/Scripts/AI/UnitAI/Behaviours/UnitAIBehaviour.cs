@@ -276,7 +276,7 @@ public class UnitAIBehaviour : MonoBehaviour {
 
 	}
 
-	private bool ObjectInMask(GameObject ob, LayerMask l)
+	public static bool ObjectInMask(GameObject ob, LayerMask l)
 	{
 		return l == (l | (1 << ob.layer));
 	}
