@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4417873509139830}
   - component: {fileID: 212312173181424716}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 56889-200
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4790937697913742}
   - component: {fileID: 58112961860219074}
   - component: {fileID: 114013344425055780}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: InteractArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 61389286408866392}
   - component: {fileID: 114429414410751718}
   - component: {fileID: 114304477876837772}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RawRubberOre
   m_TagString: RR
   m_Icon: {fileID: 0}

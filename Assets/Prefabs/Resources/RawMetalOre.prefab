@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4734430387273874}
   - component: {fileID: 58198794096890728}
   - component: {fileID: 114234607544334314}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: InteractArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4147843992046496}
   - component: {fileID: 212691695878288196}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Farmeral-metal-icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 61970737424455504}
   - component: {fileID: 114175055513372706}
   - component: {fileID: 114403887741299106}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RawMetalOre
   m_TagString: RR
   m_Icon: {fileID: 0}

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4114703685358008}
   - component: {fileID: 212627980183469290}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 375-200
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 61364956495012304}
   - component: {fileID: 114313363021530670}
   - component: {fileID: 114478927863969064}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RawOilOre
   m_TagString: RR
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4278487694547676}
   - component: {fileID: 58416986610323364}
   - component: {fileID: 114699611049391254}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: InteractArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

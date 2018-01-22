@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212773502200061664}
   - component: {fileID: 114453993004541544}
   - component: {fileID: 114655564814518484}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Oil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4337108305808854}
   - component: {fileID: 58273931537494684}
   - component: {fileID: 114450969058368966}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: InteractArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212277764257264634}
   - component: {fileID: 114726782518996750}
   - component: {fileID: 114880647168833956}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4604178855458768}
   - component: {fileID: 58809648860483680}
   - component: {fileID: 114163349421963526}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: InteractArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
