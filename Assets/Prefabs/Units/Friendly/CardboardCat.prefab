@@ -198,7 +198,7 @@ MonoBehaviour:
   MainAttack: {fileID: 114835721743292938}
   InteruptTargets:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 256
   InteruptRange: 15
   InteruptAttackRange: 2
   OtherAttack: {fileID: 114569697358472436}
