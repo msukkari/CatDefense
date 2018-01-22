@@ -33,9 +33,12 @@ public class WaveManager : MonoBehaviour {
 		NextWave ();
 	}
 
-	void NextWave(){
-		waveCount = Mathf.Clamp (waveCount + 1, 0, waves.Count);
-		StartCoroutine(SpawnWave ());
+	public void NextWave(){
+		if (enemiesLeft <= 0)
+		{
+			waveCount = Mathf.Clamp (waveCount + 1, 0, waves.Count);
+			StartCoroutine(SpawnWave ());
+		}
 	}
 
 	IEnumerator SpawnWave()
