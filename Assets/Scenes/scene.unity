@@ -314,7 +314,7 @@ Prefab:
     - target: {fileID: 114313506782151114, guid: acdaa724ecfca431392f48170c762dc4,
         type: 2}
       propertyPath: widthIcon
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114313506782151114, guid: acdaa724ecfca431392f48170c762dc4,
         type: 2}
@@ -1918,7 +1918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ug: {fileID: 1941633121}
-  m_ui: {fileID: 0}
+  m_ui: {fileID: 1143063829}
 --- !u!114 &1941633121
 MonoBehaviour:
   m_ObjectHideFlags: 0
