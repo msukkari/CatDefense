@@ -23,8 +23,9 @@ GameObject:
   - component: {fileID: 50692808853597164}
   - component: {fileID: 114534255478579646}
   - component: {fileID: 58353830933754638}
+  - component: {fileID: 114896404687859054}
   m_Layer: 0
-  m_Name: lvl1_sniper
+  m_Name: lvl2_sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1578739799194862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.364094, y: -0.6039319, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -89,10 +90,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8a74edc8239443b83207bcc96055d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 3
   speed: 25
   lifeTime: 5
   tracking: 1
+--- !u!114 &114896404687859054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1578739799194862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a090007930a4a1383af66641a74502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  damage: 2
+  DamageOnDeath: 1
+  layerTarget:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &212962351411966912
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -128,7 +146,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.9862069, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.020689487, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

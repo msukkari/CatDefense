@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 58831300160514154}
   - component: {fileID: 114446907040037060}
   m_Layer: 11
-  m_Name: Ranged
+  m_Name: lvl1_ranged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8e9af72f8ca4ba2b77380a1b34bc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 1
   m_health: 0
   HealthBarUI: {fileID: 224480620670289580}
 --- !u!114 &114743355883204152

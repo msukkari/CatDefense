@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 114611444493706856}
   - component: {fileID: 114099439657603470}
   - component: {fileID: 58754289712385426}
-  - component: {fileID: 114537110658045070}
   - component: {fileID: 212749229652507334}
   - component: {fileID: 95528285075268318}
+  - component: {fileID: 114556450108851136}
   m_Layer: 11
   m_Name: MetalCat
   m_TagString: Untagged
@@ -93,8 +93,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1094275753110594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.48, y: 2.57, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalPosition: {x: -7.692731, y: 1.8585069, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 224777146713440694}
   m_Father: {fileID: 0}
@@ -132,9 +132,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.03, y: 0.28}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.9
 --- !u!95 &95528285075268318
 Animator:
   serializedVersion: 3
@@ -163,12 +163,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a090007930a4a1383af66641a74502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 2
-  damage: 4
+  range: 3
+  damage: 3
   DamageOnDeath: 0
   layerTarget:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!114 &114315398896283426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,10 +180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8e9af72f8ca4ba2b77380a1b34bc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
   m_health: 0
   HealthBarUI: {fileID: 224577766396091624}
---- !u!114 &114537110658045070
+--- !u!114 &114556450108851136
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -191,11 +191,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1094275753110594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c585d067e9b414a73af69cb8057bae6a, type: 3}
+  m_Script: {fileID: 11500000, guid: e4c3d6469e6ba2e409b491ba21fb94e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 114534255478579646, guid: 9178965a2d0f040599d03cc21108dc85, type: 2}
-  fireRate: 1
+  targets:
+    serializedVersion: 2
+    m_Bits: 256
+  range: 4
+  damage: 0.5
 --- !u!114 &114611444493706856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,13 +216,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   MainAttackRange: 0
-  MainAttack: {fileID: 114537110658045070}
+  MainAttack: {fileID: 0}
   InteruptTargets:
     serializedVersion: 2
     m_Bits: 256
   InteruptRange: 15
-  InteruptAttackRange: 2
-  OtherAttack: {fileID: 114099439657603470}
+  InteruptAttackRange: 4
+  OtherAttack: {fileID: 114556450108851136}
   flipOnBack: 1
   flipXOnBack: 0
   freezeRotationVertical: 1
