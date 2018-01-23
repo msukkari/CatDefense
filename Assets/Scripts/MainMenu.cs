@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour {
         }
 
         m_controllerInstance = ControllerInputManager.GetInstance();
-        m_controllerInstance.OnXDown += onXDown;
+        m_controllerInstance.OnADown += onADown;
         m_controllerInstance.OnLSChange += onLSChange;
 
         isInLevelSelect = false;
@@ -36,11 +36,11 @@ public class MainMenu : MonoBehaviour {
 
     private void OnDestroy()
     {
-        m_controllerInstance.OnXDown -= onXDown;
+        m_controllerInstance.OnADown -= onADown;
         m_controllerInstance.OnLSChange -= onLSChange;
     }
 
-    public void onXDown()
+    public void onADown()
     {
         if (isInLevelSelect)
         {
