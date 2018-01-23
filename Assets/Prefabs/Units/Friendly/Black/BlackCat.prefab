@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 95005746257588554}
   - component: {fileID: 114614623941589126}
   - component: {fileID: 114881125924958206}
+  - component: {fileID: 114930152886662780}
   m_Layer: 11
   m_Name: BlackCat
   m_TagString: Untagged
@@ -306,6 +307,23 @@ MonoBehaviour:
     m_Bits: 2048
   range: 6
   damage: -3
+--- !u!114 &114930152886662780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418687041188346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a090007930a4a1383af66641a74502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  damage: -8
+  DamageOnDeath: 0
+  layerTarget:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &114961109123355960
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -92,8 +92,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1455299657890164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.494183, y: 8.859426, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalPosition: {x: -10.38, y: 0.58, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 224424001990039204}
   m_Father: {fileID: 0}
@@ -133,7 +133,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.11
+  m_Radius: 1
 --- !u!114 &114022358011197488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 4
   damage: 10
-  DamageOnDeath: 0
+  DamageOnDeath: 1
   layerTarget:
     serializedVersion: 2
     m_Bits: 256
@@ -222,19 +222,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f12a5b6bc51e4bcaaef50411d1b1edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   TargetPriority: 5
   MainTarget:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   MainAttackRange: 0
   MainAttack: {fileID: 114278039387085374}
   InteruptTargets:
     serializedVersion: 2
     m_Bits: 256
-  InteruptRange: 15
-  InteruptAttackRange: 5
-  OtherAttack: {fileID: 114022358011197488}
+  InteruptRange: 17
+  InteruptAttackRange: 15
+  OtherAttack: {fileID: 114278039387085374}
   flipOnBack: 1
   flipXOnBack: 0
   freezeRotationVertical: 1
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8e9af72f8ca4ba2b77380a1b34bc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
   m_health: 0
   HealthBarUI: {fileID: 224477868056018112}
 --- !u!114 &114995655264994392

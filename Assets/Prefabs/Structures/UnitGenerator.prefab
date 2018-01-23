@@ -163,11 +163,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_reqList:
-  - {x: 1, y: 1, z: 1}
-  - {x: 2, y: 1, z: 0}
+  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 1, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: 1, z: 0}
+  - {x: 0, y: 2, z: 0}
+  - {x: 0, y: 1, z: 2}
+  - {x: 0, y: 1, z: 1}
+  - {x: 0, y: 0, z: 2}
+  - {x: 3, y: 3, z: 3}
+  - {x: 2, y: 2, z: 2}
   m_unitList:
+  - {fileID: 1624554053937526, guid: 12b525abf7c5144439692f821b4459d0, type: 2}
+  - {fileID: 1094275753110594, guid: 1d1263306ae2d43c99d9d38424369fb1, type: 2}
   - {fileID: 1348658567599208, guid: d9b29512e56d741aba9c5c6d93bd2718, type: 2}
+  - {fileID: 1348658567599208, guid: 5c9bb9ac9db16bb4691ba7fb9b7c29be, type: 2}
+  - {fileID: 1490112832470878, guid: 12f8e4a5ead721b438a542c2c2b60653, type: 2}
+  - {fileID: 1120808384776060, guid: 7ad12e0af76587b409e9897b714ebb5b, type: 2}
   - {fileID: 1120808384776060, guid: aaa75c488646946deb096d5503f3daa1, type: 2}
+  - {fileID: 1624554053937526, guid: 6a2edcc21fd3fa74e8f016778ad1f013, type: 2}
+  - {fileID: 1455299657890164, guid: 669651d2b12ff4aefb0d3b6712c8de73, type: 2}
+  - {fileID: 1418687041188346, guid: cf6d692baed704939af65f439e4c14c4, type: 2}
   m_spawnPoint: {fileID: 1453173057716202}
   m_curResources: {x: 0, y: 0, z: 0}
   m_interactArea: {fileID: 1660600664577636}

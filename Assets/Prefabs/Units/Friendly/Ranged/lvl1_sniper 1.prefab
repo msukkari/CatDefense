@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 58353830933754638}
   - component: {fileID: 114896404687859054}
   m_Layer: 0
-  m_Name: lvl2_sniper
+  m_Name: lvl1_sniper 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
