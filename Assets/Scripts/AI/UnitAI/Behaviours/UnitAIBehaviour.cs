@@ -323,11 +323,11 @@ public class UnitAIBehaviour : MonoBehaviour {
 
     void OnDrawGizmos()
 	{
-		//Gizmos.color = Color.red;
-		//Gizmos.DrawWireSphere (this.transform.position, MainAttackRange);
-		//Gizmos.color = Color.yellow;
-		//Gizmos.DrawWireSphere (this.transform.position, InteruptRange);
-		//Gizmos.color = Color.blue;
-		//Gizmos.DrawWireSphere (this.transform.position, InteruptAttackRange);
-	}
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, MainAttackRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(this.transform.position, InteruptRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(this.transform.position, InteruptAttackRange);
+    }
 }

@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour {
 	public float damage = 2;
 	public float speed = 5;
 	public float lifeTime = 2;
-
+    public bool tracking = false;
 
 	Coroutine killRoutine;
 	private GameObject target;
@@ -18,7 +18,16 @@ public class Bullet : MonoBehaviour {
 		killRoutine = StartCoroutine (Kill (lifeTime));
 	}
 
-	private IEnumerator Kill(float time){
+    private void Update()
+    {
+        if(tracking && target!=null)
+        {
+            this.GetComponent<Rigidbody2D>().velocity = ((Vector2)(target.transform.position - this.transform.position)).normalized * speed;
+        }
+
+    }
+
+    private IEnumerator Kill(float time){
 		yield return new WaitForSeconds (time);
 		Destroy (this.gameObject);
 	}
