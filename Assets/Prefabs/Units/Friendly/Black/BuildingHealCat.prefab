@@ -41,11 +41,8 @@ GameObject:
   - component: {fileID: 114817538267557612}
   - component: {fileID: 114220013472420468}
   - component: {fileID: 58071226272076048}
-  - component: {fileID: 114773563400374508}
   - component: {fileID: 212033003351083882}
   - component: {fileID: 95219469062003126}
-  - component: {fileID: 114600989071716490}
-  - component: {fileID: 114436336340272200}
   - component: {fileID: 114041488691028614}
   m_Layer: 11
   m_Name: BuildingHealCat
@@ -97,7 +94,7 @@ Transform:
   m_GameObject: {fileID: 1143117576620198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.419968, y: 0.6262679, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 224799318949291114}
   m_Father: {fileID: 0}
@@ -210,11 +207,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  damage: 8
+  damage: -5
   DamageOnDeath: 1
   layerTarget:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
 --- !u!114 &114367537929939742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,22 +228,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114436336340272200
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1143117576620198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c3d6469e6ba2e409b491ba21fb94e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targets:
-    serializedVersion: 2
-    m_Bits: 2048
-  range: 6
-  damage: -3
 --- !u!114 &114509172377035068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,35 +275,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &114600989071716490
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1143117576620198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c3d6469e6ba2e409b491ba21fb94e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targets:
-    serializedVersion: 2
-    m_Bits: 256
-  range: 5
-  damage: 1
---- !u!114 &114773563400374508
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1143117576620198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c585d067e9b414a73af69cb8057bae6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 114534255478579646, guid: 9178965a2d0f040599d03cc21108dc85, type: 2}
-  fireRate: 1
 --- !u!114 &114817538267557612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,13 +286,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f12a5b6bc51e4bcaaef50411d1b1edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   TargetPriority: 5
   MainTarget:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 512
   MainAttackRange: 4
-  MainAttack: {fileID: 114436336340272200}
+  MainAttack: {fileID: 0}
   InteruptTargets:
     serializedVersion: 2
     m_Bits: 256
@@ -399,7 +351,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: a5817b5e7463c4beea61017e090e8e5c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.16176468, b: 0.24847838, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

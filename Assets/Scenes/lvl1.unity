@@ -452,7 +452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &728620320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,28 +465,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - SpawnPoints:
+  - WaveDelay: 5
+    SpawnPoints:
     - spawnPoint: {fileID: 728620319}
       enemiesToSpawn:
-      - enemy: {fileID: 114239309778564462, guid: 05ade6f6c9de04d46ad60cb24e80f3c0,
+      - timeStartWait: 0
+        enemy: {fileID: 114849149682361406, guid: 55454c6dc0f1bb14c8d6275a10482a83,
           type: 2}
         count: 3
-        timeBetween: 1
-      - enemy: {fileID: 0}
+        timeBetween: 2
+  - WaveDelay: 0
+    SpawnPoints:
+    - spawnPoint: {fileID: 728620319}
+      enemiesToSpawn:
+      - timeStartWait: 0
+        enemy: {fileID: 114317944358697310, guid: 89065a870737aeb4a891372543f59868,
+          type: 2}
+        count: 3
+        timeBetween: 2
+  - WaveDelay: 5
+    SpawnPoints:
+    - spawnPoint: {fileID: 728620319}
+      enemiesToSpawn:
+      - timeStartWait: 0
+        enemy: {fileID: 114764360583008122, guid: 330c4f78abd8947df93e5ff7216194fd,
+          type: 2}
         count: 2
-        timeBetween: 3
-  - SpawnPoints:
-    - spawnPoint: {fileID: 728620319}
-      enemiesToSpawn:
-      - enemy: {fileID: 0}
-        count: 4
-        timeBetween: 5
-    - spawnPoint: {fileID: 975990998}
-      enemiesToSpawn:
-      - enemy: {fileID: 114239309778564462, guid: 05ade6f6c9de04d46ad60cb24e80f3c0,
-          type: 2}
-        count: 3
-        timeBetween: 1
+        timeBetween: 4
 --- !u!212 &728620321
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -819,7 +824,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4276245549278124, guid: 3d9c7d943b92d400ba10a3edddd720f0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 23.2
       objectReference: {fileID: 0}
     - target: {fileID: 4276245549278124, guid: 3d9c7d943b92d400ba10a3edddd720f0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -982,11 +987,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4249375244849206, guid: b2fad1a0d06b6d847bdd4218a737a9ab, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.7
+      value: 17.9
       objectReference: {fileID: 0}
     - target: {fileID: 4249375244849206, guid: b2fad1a0d06b6d847bdd4218a737a9ab, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4249375244849206, guid: b2fad1a0d06b6d847bdd4218a737a9ab, type: 2}
       propertyPath: m_LocalPosition.z

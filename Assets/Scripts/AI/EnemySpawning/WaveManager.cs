@@ -4,6 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public struct Wave{
+	public float WaveDelay;
 	public List<SpawnPoints> SpawnPoints;
 }
 
@@ -17,6 +18,7 @@ public struct SpawnPoints
 [System.Serializable]
 public struct Spawn
 {
+	public float timeStartWait ;
 	public HealthComponent enemy;
 	public float count;
 	public float timeBetween;
@@ -43,9 +45,11 @@ public class WaveManager : MonoBehaviour {
 
 	IEnumerator SpawnWave()
 	{
+		
 		//Call this when you want to spawn the current wave
 		if (waveCount < waves.Count)
 		{
+			yield return new WaitForSeconds (waves [waveCount].WaveDelay);
 			//For each spawnpoint, we make an enumerator which spawns its wave
 			foreach (SpawnPoints p in waves[waveCount].SpawnPoints)
 			{
@@ -60,6 +64,8 @@ public class WaveManager : MonoBehaviour {
 	IEnumerator SpawnPointWave(SpawnPoints p){
 		foreach (Spawn s in p.enemiesToSpawn)
 		{
+			yield return new WaitForSeconds (s.timeStartWait);
+
 			for (int i = 0; i < s.count; i++)
 			{
 				HealthComponent spawned = Instantiate (s.enemy, p.spawnPoint.transform.position, p.spawnPoint.transform.rotation);
