@@ -129,11 +129,16 @@ public class UnitAIBehaviour : MonoBehaviour {
 			}
 		case AIState.ChaseSecond:
 			{
-				if (m_currentTarget == null)
+  
+                if (m_currentTarget == null)
 				{
 					m_state = AIState.FindMain;
 				}
-				else if ( Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) <= InteruptAttackRange)
+                else if (col != null && col.gameObject != m_currentTarget.gameObject)
+                {
+                    m_state = AIState.FindSecond;
+                }
+                else if ( Vector2.Distance ((Vector2)this.transform.position, (Vector2)m_currentTarget.transform.position) <= InteruptAttackRange)
 				{
 					m_state = AIState.AttackSecond;
 				} 
@@ -303,7 +308,20 @@ public class UnitAIBehaviour : MonoBehaviour {
 	}
 
 
-	void OnDrawGizmos()
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (ObjectInMask(collision.gameObject, MainTarget) && collision.gameObject.GetComponent<HealthComponent>()!=null)
+        {
+            m_state = AIState.AttackMain;
+            m_currentTarget = collision.gameObject.GetComponent<HealthComponent>();
+        }else if (ObjectInMask(collision.gameObject, InteruptTargets) && collision.gameObject.GetComponent<HealthComponent>() != null)
+        {
+            m_state = AIState.AttackSecond;
+            m_currentTarget = collision.gameObject.GetComponent<HealthComponent>();
+        }
+    }
+
+    void OnDrawGizmos()
 	{
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere (this.transform.position, MainAttackRange);
