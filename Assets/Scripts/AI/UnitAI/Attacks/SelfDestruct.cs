@@ -6,11 +6,15 @@ public class SelfDestruct : AbAttack {
 
 	public float range;
 	public float damage;
+    public bool DamageOnDeath = false;
+    private bool self_destruct = false;
 	public LayerMask layerTarget;
 
 	public override void Execute (HealthComponent t)
 	{
-		Collider2D[] hit = Physics2D.OverlapCircleAll ((Vector2)this.transform.position, range);
+
+        self_destruct = true;
+        Collider2D[] hit = Physics2D.OverlapCircleAll ((Vector2)this.transform.position, range);
 		
 		foreach (Collider2D c in hit)
 		{
@@ -31,4 +35,14 @@ public class SelfDestruct : AbAttack {
 		}
 
 	}
+
+    public void OnDestroy()
+    {
+        if(DamageOnDeath && !self_destruct)
+        {
+            //When it dies, kill things around it as well
+            Execute(null);
+        }
+
+    }
 }
