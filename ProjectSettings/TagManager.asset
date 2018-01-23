@@ -53,3 +53,6 @@ TagManager:
   - name: Buildings
     uniqueID: 2281581765
     locked: 0
+  - name: BG
+    uniqueID: 2416094801
+    locked: 0

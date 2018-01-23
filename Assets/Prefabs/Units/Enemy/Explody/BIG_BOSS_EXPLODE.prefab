@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 1
   damage: 5
-  DamageOnDeath: 0
+  DamageOnDeath: 1
   layerTarget:
     serializedVersion: 2
     m_Bits: 2048
