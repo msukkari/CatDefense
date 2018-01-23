@@ -39,12 +39,14 @@ public class WaveManager : MonoBehaviour {
 	private bool waveDone = true;
     private bool allWavesDone = false;
 
+    private int[] waveDelayList = { 3, 3, 5, 5, 5 };
+
 	void Start () {
         ControllerInputManager.GetInstance ().OnStartDown += PressNext;
 
         pressStart.SetActive(false);
 
-        for (int i = 0; i < waves.Count; i++) waves[i].WaveDelay = 3.0f;
+        for (int i = 0; i < waves.Count; i++) waves[i].WaveDelay = waveDelayList[i];
         NextWave ();
 
 	}
