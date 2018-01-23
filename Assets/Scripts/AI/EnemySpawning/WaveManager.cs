@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [System.Serializable]
-public struct Wave{
+public class Wave{
 	public float WaveDelay;
 	public List<SpawnPoints> SpawnPoints;
 }
@@ -28,21 +29,46 @@ public struct Spawn
 public class WaveManager : MonoBehaviour {
 
 	public string next_level;
-
 	public List<Wave> waves;
-	int waveCount = -1;
+	public int waveCount;
 	public int enemiesLeft = 0;
+
+    public GameObject pressStart; // press start to go to next level text
+
 	private bool waveActive = false;
 	private bool waveDone = true;
+    private bool allWavesDone = false;
 
-	// Use this for initialization
 	void Start () {
-		ControllerInputManager.GetInstance ().OnStartDown += PressNext;
-		//NextWave ();
+        ControllerInputManager.GetInstance ().OnStartDown += PressNext;
+
+        pressStart.SetActive(false);
+
+        for (int i = 0; i < waves.Count; i++) waves[i].WaveDelay = 3.0f;
+        NextWave ();
+
 	}
 
-	public void PressNext()
+    private void OnDestroy()
+    {
+        ControllerInputManager.GetInstance().OnStartDown -= PressNext;
+    }
+
+    public void PressNext()
 	{
+        if(allWavesDone)
+        {
+            if (!string.IsNullOrEmpty(next_level))
+            {
+                SceneManager.LoadScene(next_level);
+            }
+            else
+            {
+                SceneManager.LoadScene("menu");
+            }
+        }
+
+        /*
 		if (waveDone)
 		{
 			if (waveCount >= (waves.Count-1))
@@ -60,6 +86,7 @@ public class WaveManager : MonoBehaviour {
 				NextWave ();
 			}
 		}
+        */
 
 	}
 
@@ -112,10 +139,12 @@ public class WaveManager : MonoBehaviour {
 			waveDone = true;
 			if (waveCount >= (waves.Count-1))
 			{
-				//Game Done!
-			} else
+                //Game Done!
+                allWavesDone = true;
+                pressStart.SetActive(true);
+            } else
 			{
-				//NextWave ();
+				NextWave ();
 			}
 
 		}
