@@ -174,7 +174,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   InteruptRange: 2
-  InteruptAttackRange: 3
+  InteruptAttackRange: 4
   OtherAttack: {fileID: 114653476402913692}
   flipOnBack: 0
   flipXOnBack: 0

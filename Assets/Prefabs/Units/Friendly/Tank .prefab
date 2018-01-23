@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a090007930a4a1383af66641a74502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 2
-  damage: 4
+  range: 4
+  damage: 10
   layerTarget:
     serializedVersion: 2
     m_Bits: 256
@@ -232,7 +232,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   InteruptRange: 15
-  InteruptAttackRange: 3
+  InteruptAttackRange: 5
   OtherAttack: {fileID: 114022358011197488}
   flipOnBack: 1
   flipXOnBack: 0
