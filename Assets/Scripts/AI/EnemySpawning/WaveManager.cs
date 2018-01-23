@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct Wave{
@@ -26,18 +27,45 @@ public struct Spawn
 
 public class WaveManager : MonoBehaviour {
 
+	public string next_level;
+
 	public List<Wave> waves;
 	int waveCount = -1;
-	private int enemiesLeft = 0;
+	public int enemiesLeft = 0;
 	private bool waveActive = false;
+	private bool waveDone = true;
 	// Use this for initialization
 	void Start () {
-		NextWave ();
+		ControllerInputManager.GetInstance ().OnStartDown += PressNext;
+		//NextWave ();
+	}
+
+	public void PressNext()
+	{
+		if (waveDone)
+		{
+			if (waveCount >= (waves.Count-1))
+			{
+				
+				if (!string.IsNullOrEmpty(next_level))
+				{
+					SceneManager.LoadScene (next_level);
+				} else
+				{
+					SceneManager.LoadScene ("menu");
+				}
+			} else
+			{
+				NextWave ();
+			}
+		}
+
 	}
 
 	public void NextWave(){
 		if (enemiesLeft <= 0)
 		{
+			waveActive = true;
 			waveCount = Mathf.Clamp (waveCount + 1, 0, waves.Count);
 			StartCoroutine(SpawnWave ());
 		}
@@ -45,7 +73,7 @@ public class WaveManager : MonoBehaviour {
 
 	IEnumerator SpawnWave()
 	{
-		
+		waveDone = false;
 		//Call this when you want to spawn the current wave
 		if (waveCount < waves.Count)
 		{
@@ -80,13 +108,13 @@ public class WaveManager : MonoBehaviour {
 		enemiesLeft--;
 		if (enemiesLeft <= 0)
 		{
-			if (waveCount >= waves.Count)
+			waveDone = true;
+			if (waveCount >= (waves.Count-1))
 			{
 				//Game Done!
 			} else
 			{
-				waveActive = true;
-				NextWave ();
+				//NextWave ();
 			}
 
 		}

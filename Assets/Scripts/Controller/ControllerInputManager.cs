@@ -31,6 +31,7 @@ public class ControllerInputManager : MonoBehaviour {
 	static string B = "B";
 	static string X = "X";
 	static string Y = "Y";
+	static string START = "Start";
 
 	#endregion
 
@@ -45,6 +46,8 @@ public class ControllerInputManager : MonoBehaviour {
 	public event ButtonDownEvevnt OnRBDown;
 	public event ButtonDownEvevnt OnRTDown;
 	public event ButtonDownEvevnt OnLTDown;
+	public event ButtonDownEvevnt OnStartDown;
+
 
 	//Axis changes is called every update, TODO: should it just when nonzero...?
 	//Call these to get the value of an axis 
@@ -136,6 +139,10 @@ public class ControllerInputManager : MonoBehaviour {
 		if (OnRBDown != null && Input.GetButtonDown(getPlayerInputString(RB)))
 		{
 			OnRBDown ();
+		}
+		if (OnStartDown != null && Input.GetButtonDown(getPlayerInputString(START)))
+		{
+			OnStartDown ();
 		}
 
 
