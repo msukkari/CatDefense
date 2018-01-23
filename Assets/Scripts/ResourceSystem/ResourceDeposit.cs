@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResourceDeposit : MonoBehaviour {
 
@@ -19,5 +20,11 @@ public class ResourceDeposit : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	void OnDestroy()
+	{
+		SceneManager.LoadScene ("menu");
+		//Gameover
 	}
 }

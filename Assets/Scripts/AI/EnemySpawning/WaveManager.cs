@@ -34,6 +34,7 @@ public class WaveManager : MonoBehaviour {
 	public int enemiesLeft = 0;
 	private bool waveActive = false;
 	private bool waveDone = true;
+
 	// Use this for initialization
 	void Start () {
 		ControllerInputManager.GetInstance ().OnStartDown += PressNext;
