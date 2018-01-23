@@ -24,7 +24,7 @@ public class ResourceInteract : MonoBehaviour, IInteractable {
 
 	public void Interact(GameObject player, Button button)
     {
-		if(button == Button.A)
+		if(button == Button.A && player.GetComponent<PlayerController>().heldResource == null)
 		{
 	        PlayerController p = player.GetComponent<PlayerController>();
 

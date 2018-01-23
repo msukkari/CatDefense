@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 839da67fd7d73bc45beb032258b6c845
+timeCreated: 1516739032
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: CardboardCat
+  fontNames:
+  - CardboardCat
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 63d1c9cfd65ff4040a8f57c9fb3844ef, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
