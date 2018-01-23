@@ -45,7 +45,7 @@ public class MainMenu : MonoBehaviour {
     {
         if (isInLevelSelect)
         {
-            SceneManager.LoadScene(selectedLevel);
+            SceneManager.LoadScene(selectedLevel + 1);
         }
         else
         {

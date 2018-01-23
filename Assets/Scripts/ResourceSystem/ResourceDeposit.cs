@@ -26,6 +26,7 @@ public class ResourceDeposit : MonoBehaviour {
 	// Update is called once per frame
 	void Die()
 	{
+        Destroy(GameObject.Find("BackgroundMusic"));
 		SceneManager.LoadScene ("menu");
 	}
 
