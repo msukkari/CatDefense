@@ -173,6 +173,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 2}
   - {x: 3, y: 3, z: 3}
   - {x: 2, y: 2, z: 2}
+  - {x: 0, y: 3, z: 0}
   m_unitList:
   - {fileID: 1624554053937526, guid: 12b525abf7c5144439692f821b4459d0, type: 2}
   - {fileID: 1094275753110594, guid: 1d1263306ae2d43c99d9d38424369fb1, type: 2}
@@ -184,6 +185,7 @@ MonoBehaviour:
   - {fileID: 1624554053937526, guid: 6a2edcc21fd3fa74e8f016778ad1f013, type: 2}
   - {fileID: 1455299657890164, guid: 669651d2b12ff4aefb0d3b6712c8de73, type: 2}
   - {fileID: 1418687041188346, guid: cf6d692baed704939af65f439e4c14c4, type: 2}
+  - {fileID: 1143117576620198, guid: 26d39bc5260e144e2925d3e7a2c35b81, type: 2}
   m_spawnPoint: {fileID: 1453173057716202}
   m_curResources: {x: 0, y: 0, z: 0}
   m_interactArea: {fileID: 1660600664577636}
