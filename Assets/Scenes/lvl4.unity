@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8e9af72f8ca4ba2b77380a1b34bc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 15
   m_health: 0
   HealthBarUI: {fileID: 1013680915}
 --- !u!58 &377756515
@@ -1231,6 +1231,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 55
       objectReference: {fileID: 0}
+    - target: {fileID: 114154476246521966, guid: 3d9c7d943b92d400ba10a3edddd720f0,
+        type: 2}
+      propertyPath: maxHealth
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d9c7d943b92d400ba10a3edddd720f0, type: 2}
   m_IsPrefabParent: 0
@@ -1262,7 +1267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389ee71795b0a4cedb67943e47894af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next_level: 
+  next_level: lvl5
   waves:
   - WaveDelay: 0
     SpawnPoints:
@@ -1271,125 +1276,95 @@ MonoBehaviour:
       - timeStartWait: 0
         enemy: {fileID: 114849149682361406, guid: 55454c6dc0f1bb14c8d6275a10482a83,
           type: 2}
-        count: 3
-        timeBetween: 2
-      - timeStartWait: 9
-        enemy: {fileID: 0}
-        count: 0
-        timeBetween: 0
-      - timeStartWait: 2
-        enemy: {fileID: 114239309778564462, guid: 05ade6f6c9de04d46ad60cb24e80f3c0,
-          type: 2}
-        count: 1
-        timeBetween: 1
+        count: 4
+        timeBetween: 4
     - spawnPoint: {fileID: 975990998}
       enemiesToSpawn:
       - timeStartWait: 6
-        enemy: {fileID: 0}
-        count: 0
-        timeBetween: 0
-      - timeStartWait: 3
-        enemy: {fileID: 114094069914473468, guid: 6bc07bad5acb8ad409e8b3d59077416d,
+        enemy: {fileID: 114849149682361406, guid: 55454c6dc0f1bb14c8d6275a10482a83,
           type: 2}
-        count: 3
-        timeBetween: 3
-      - timeStartWait: 2
-        enemy: {fileID: 114239309778564462, guid: 05ade6f6c9de04d46ad60cb24e80f3c0,
-          type: 2}
-        count: 1
-        timeBetween: 1
+        count: 4
+        timeBetween: 4
     - spawnPoint: {fileID: 1005351567}
       enemiesToSpawn:
-      - timeStartWait: 6
-        enemy: {fileID: 0}
-        count: 0
-        timeBetween: 0
-      - timeStartWait: 3
-        enemy: {fileID: 114094069914473468, guid: 6bc07bad5acb8ad409e8b3d59077416d,
+      - timeStartWait: 0
+        enemy: {fileID: 114849149682361406, guid: 55454c6dc0f1bb14c8d6275a10482a83,
           type: 2}
-        count: 3
-        timeBetween: 3
-      - timeStartWait: 2
-        enemy: {fileID: 114239309778564462, guid: 05ade6f6c9de04d46ad60cb24e80f3c0,
-          type: 2}
-        count: 1
-        timeBetween: 1
+        count: 4
+        timeBetween: 4
     - spawnPoint: {fileID: 969653130}
       enemiesToSpawn:
       - timeStartWait: 0
         enemy: {fileID: 114849149682361406, guid: 55454c6dc0f1bb14c8d6275a10482a83,
           type: 2}
+        count: 4
+        timeBetween: 4
+  - WaveDelay: 0
+    SpawnPoints:
+    - spawnPoint: {fileID: 728620319}
+      enemiesToSpawn:
+      - timeStartWait: 0
+        enemy: {fileID: 114764360583008122, guid: 330c4f78abd8947df93e5ff7216194fd,
+          type: 2}
+        count: 2
+        timeBetween: 5
+      - timeStartWait: 0
+        enemy: {fileID: 114028425095681924, guid: 42b0ce8aa796bae4e9a5e144bbe394be,
+          type: 2}
+        count: 2
+        timeBetween: 4
+    - spawnPoint: {fileID: 975990998}
+      enemiesToSpawn:
+      - timeStartWait: 0
+        enemy: {fileID: 114862372330743406, guid: 31a37fb852dba914383649f25b3df665,
+          type: 2}
+        count: 2
+        timeBetween: 4
+      - timeStartWait: 0
+        enemy: {fileID: 114764360583008122, guid: 330c4f78abd8947df93e5ff7216194fd,
+          type: 2}
+        count: 2
+        timeBetween: 5
+    - spawnPoint: {fileID: 1005351567}
+      enemiesToSpawn:
+      - timeStartWait: 0
+        enemy: {fileID: 114824443723443736, guid: 94ef8550065bce643adc7d05a3926f5b,
+          type: 2}
+        count: 2
+        timeBetween: 4
+      - timeStartWait: 0
+        enemy: {fileID: 114917326131840632, guid: fc6bbd01880a24457949bd9eb077091a,
+          type: 2}
         count: 3
-        timeBetween: 2
-      - timeStartWait: 9
-        enemy: {fileID: 0}
-        count: 0
-        timeBetween: 0
-      - timeStartWait: 2
-        enemy: {fileID: 114239309778564462, guid: 05ade6f6c9de04d46ad60cb24e80f3c0,
-          type: 2}
-        count: 1
-        timeBetween: 1
-  - WaveDelay: 0
-    SpawnPoints:
-    - spawnPoint: {fileID: 728620319}
-      enemiesToSpawn:
-      - timeStartWait: 0
-        enemy: {fileID: 114764360583008122, guid: 330c4f78abd8947df93e5ff7216194fd,
-          type: 2}
-        count: 2
         timeBetween: 5
-    - spawnPoint: {fileID: 975990998}
-      enemiesToSpawn:
-      - timeStartWait: 0
-        enemy: {fileID: 114764360583008122, guid: 330c4f78abd8947df93e5ff7216194fd,
-          type: 2}
-        count: 2
-        timeBetween: 5
-    - spawnPoint: {fileID: 1005351567}
-      enemiesToSpawn:
-      - timeStartWait: 0
-        enemy: {fileID: 114824443723443736, guid: 94ef8550065bce643adc7d05a3926f5b,
-          type: 2}
-        count: 1
-        timeBetween: 0
-    - spawnPoint: {fileID: 969653130}
-      enemiesToSpawn:
-      - timeStartWait: 0
-        enemy: {fileID: 114824443723443736, guid: 94ef8550065bce643adc7d05a3926f5b,
-          type: 2}
-        count: 1
-        timeBetween: 1
-  - WaveDelay: 0
-    SpawnPoints:
-    - spawnPoint: {fileID: 728620319}
-      enemiesToSpawn:
-      - timeStartWait: 0
-        enemy: {fileID: 114824443723443736, guid: 94ef8550065bce643adc7d05a3926f5b,
-          type: 2}
-        count: 2
-        timeBetween: 3
-    - spawnPoint: {fileID: 975990998}
-      enemiesToSpawn:
-      - timeStartWait: 0
-        enemy: {fileID: 114824443723443736, guid: 94ef8550065bce643adc7d05a3926f5b,
-          type: 2}
-        count: 2
-        timeBetween: 3
     - spawnPoint: {fileID: 969653130}
       enemiesToSpawn:
       - timeStartWait: 0
         enemy: {fileID: 114824443723443736, guid: 94ef8550065bce643adc7d05a3926f5b,
           type: 2}
         count: 2
-        timeBetween: 3
-    - spawnPoint: {fileID: 1005351567}
+        timeBetween: 4
+      - timeStartWait: 10
+        enemy: {fileID: 114379991742108934, guid: 9813e3cc74a2a9e4bab525d52ccbbdd8,
+          type: 2}
+        count: 1
+        timeBetween: 4
+  - WaveDelay: 0
+    SpawnPoints:
+    - spawnPoint: {fileID: 728620319}
       enemiesToSpawn:
       - timeStartWait: 0
-        enemy: {fileID: 114824443723443736, guid: 94ef8550065bce643adc7d05a3926f5b,
+        enemy: {fileID: 114028425095681924, guid: 42b0ce8aa796bae4e9a5e144bbe394be,
           type: 2}
         count: 2
-        timeBetween: 3
+        timeBetween: 10
+    - spawnPoint: {fileID: 975990998}
+      enemiesToSpawn:
+      - timeStartWait: 0
+        enemy: {fileID: 114028425095681924, guid: 42b0ce8aa796bae4e9a5e144bbe394be,
+          type: 2}
+        count: 2
+        timeBetween: 10
   enemiesLeft: 0
 --- !u!212 &728620321
 SpriteRenderer:
