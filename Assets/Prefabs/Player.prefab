@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 10
+  m_boostRatio: 2
   heldResource: {fileID: 0}
 --- !u!114 &114628632437669126
 MonoBehaviour:
@@ -147,9 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bca4adca6a6164c8506f8d6fba5f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metal: 99
-  oil: 99
-  rubber: 99
+  metal: 0
+  oil: 0
+  rubber: 0
 --- !u!114 &114954738418249676
 MonoBehaviour:
   m_ObjectHideFlags: 1

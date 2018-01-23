@@ -292,7 +292,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   MainAttackRange: 4
-  MainAttack: {fileID: 0}
+  MainAttack: {fileID: 114220013472420468}
   InteruptTargets:
     serializedVersion: 2
     m_Bits: 256

@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float m_speed;
+	public float m_boostRatio = 1.0f;
+
+	private bool m_boostOn = false;
+
     public IInteractable m_curInteract;
     public GameObject heldResource;
 
@@ -19,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 		m_controllerInstance.OnYDown += onYDown;
 		m_controllerInstance.OnBDown += onBDown;
 		m_controllerInstance.OnLSChange += Move;
+		m_controllerInstance.OnRTChange += Boost;
 
         rb = GetComponent<Rigidbody2D>();
         m_curInteract = null;
@@ -42,6 +47,12 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space)) onADown();
     }
 
+
+	public void Boost(float amount)
+	{
+		m_boostOn = amount > 0.5f;
+	}
+
     public void Move(float x, float y)
     {
 		//Temporary so we can use keyboard input as well
@@ -51,6 +62,10 @@ public class PlayerController : MonoBehaviour {
 	        x = Input.GetKey(KeyCode.D) ? 1.0f : Input.GetKey(KeyCode.A) ? -1.0f : 0.0f;
 		}
         rb.velocity = new Vector2(x * m_speed, y * m_speed);
+		if (m_boostOn)
+		{
+			rb.velocity = rb.velocity * m_boostRatio;
+		}
     }
 
 	public void onADown() {onButtonDown(Button.A);}
