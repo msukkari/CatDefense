@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour {
     public Image levelSelectImage;
 
     private bool joystickChanged;
+	public GameObject[] menuDisplay;
     private List<Text> levelTextList;
     private ControllerInputManager m_controllerInstance;
     private bool isInLevelSelect;
@@ -64,6 +65,7 @@ public class MainMenu : MonoBehaviour {
                 {
                     levelTextList[selectedLevel++].color = Color.black;
                     levelTextList[selectedLevel].color = Color.white;
+
                 }
                 joystickChanged = true;
             }
@@ -79,9 +81,14 @@ public class MainMenu : MonoBehaviour {
 
             // make sure selectedLevel doesn't exceed bounds
             selectedLevel = selectedLevel < 0 ? 0 : (selectedLevel >= levelTextList.Count ? levelTextList.Count - 1 : selectedLevel);
+			for (int i = 0; i < menuDisplay.Length; i++)
+			{
+				menuDisplay[i].SetActive (i == selectedLevel);
+			}
         }
         else if (y == 0) joystickChanged = false;
     }
 
- 
+
+ 
 }
