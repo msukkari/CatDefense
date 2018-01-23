@@ -251,7 +251,7 @@ MonoBehaviour:
   MainAttack: {fileID: 0}
   InteruptTargets:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 2048
   InteruptRange: 0
   InteruptAttackRange: 0
   OtherAttack: {fileID: 0}

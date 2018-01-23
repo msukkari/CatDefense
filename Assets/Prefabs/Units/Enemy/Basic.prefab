@@ -168,13 +168,13 @@ MonoBehaviour:
   MainTarget:
     serializedVersion: 2
     m_Bits: 512
-  MainAttackRange: 7
+  MainAttackRange: 4
   MainAttack: {fileID: 114654774155416960}
   InteruptTargets:
     serializedVersion: 2
-    m_Bits: 1280
+    m_Bits: 2048
   InteruptRange: 2
-  InteruptAttackRange: 5
+  InteruptAttackRange: 3
   OtherAttack: {fileID: 114653476402913692}
   flipOnBack: 0
   flipXOnBack: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a090007930a4a1383af66641a74502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 2
+  range: 4
   damage: 2
   layerTarget:
     serializedVersion: 2
