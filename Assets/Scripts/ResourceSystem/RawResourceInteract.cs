@@ -23,7 +23,7 @@ public class RawResourceInteract : MonoBehaviour, IInteractable {
 
 	public void Interact(GameObject player, Button button)
     {   
-		if(button == Button.A)
+		if(button == Button.A && player.GetComponent<PlayerController>().heldResource == null)
 		{
 	        if (!m_r.linkedResource)
 	        {
