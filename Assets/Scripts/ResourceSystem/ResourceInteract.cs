@@ -29,7 +29,9 @@ public class ResourceInteract : MonoBehaviour, IInteractable {
 	        PlayerController p = player.GetComponent<PlayerController>();
 
 	        p.heldResource = m_r.gameObject;
-	        m_r.gameObject.transform.parent = player.transform;
+            m_r.m_resourceManager.numSpawnedRRs--;
+            m_r.m_spawnPoint.OnCollected();
+            m_r.gameObject.transform.parent = player.transform;
 		}
     }
 }

@@ -15,8 +15,7 @@ public class SpawnPoint : MonoBehaviour {
 
     public void OnCollected()
     {
-        hasResource = false;
-        curResource = null;
+        StartCoroutine(spawnDelay());
     }
 
 	void Start () {
@@ -26,4 +25,12 @@ public class SpawnPoint : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    IEnumerator spawnDelay()
+    {
+        yield return new WaitForSeconds(5.0f);
+        hasResource = false;
+        curResource = null;
+    }
+
 }

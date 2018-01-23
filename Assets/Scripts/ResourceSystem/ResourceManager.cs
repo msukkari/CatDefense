@@ -14,8 +14,9 @@ public class ResourceManager : MonoBehaviour
     private List<GameObject> spawnPointList;
     private float counter;
 
+    public int spawnDelay;
 
-    // Use this for initialization
+
     void Start()
     {
         RRList = new List<GameObject>();
@@ -31,26 +32,26 @@ public class ResourceManager : MonoBehaviour
         counter = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (numSpawnedRRs < spawnPointList.Count)
         {
-            if (counter >= 1.0f)
+            if (counter >= spawnDelay)
             {
-                GameObject resource = Instantiate(prefabList[Random.Range(0, 3)]);
 
                 SpawnPoint sp = spawnPointList[Random.Range(0, spawnPointList.Count)].GetComponent<SpawnPoint>();
-                while (sp.hasResource) sp = spawnPointList[Random.Range(0, spawnPointList.Count)].GetComponent<SpawnPoint>();
+                if(!sp.hasResource)
+                {
+                    GameObject resource = Instantiate(prefabList[Random.Range(0, 3)]);
+                    resource.transform.position = sp.transform.position;
+                    resource.GetComponent<Resource>().m_spawnPoint = sp;
+                    sp.hasResource = true;
+                    sp.curResource = resource;
 
-                resource.transform.position = sp.transform.position;
-                resource.GetComponent<Resource>().m_spawnPoint = sp;
-                sp.hasResource = true;
-                sp.curResource = resource;
-
-                RRList.Add(resource);
-                numSpawnedRRs++;
-                counter = 0;
+                    RRList.Add(resource);
+                    numSpawnedRRs++;
+                    counter = 0;
+                }
             }
             else counter += Time.deltaTime;
         }

@@ -34,8 +34,7 @@ public class RawResourceInteract : MonoBehaviour, IInteractable {
 
 	        GameObject fr = Instantiate(m_r.linkedResource);
 	        fr.transform.position = m_r.transform.position;
-            m_r.m_resourceManager.numSpawnedRRs--;
-            m_r.m_spawnPoint.OnCollected();
+            fr.GetComponent<Resource>().m_spawnPoint = m_r.m_spawnPoint;
             Destroy(m_r.gameObject);
 		}
 
