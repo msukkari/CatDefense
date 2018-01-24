@@ -393,7 +393,7 @@ InputManager:
     m_Name: WindowsStart
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: enter
+    negativeButton: return
     positiveButton: joystick button 7
     altNegativeButton: 
     altPositiveButton: mouse 2
@@ -409,7 +409,7 @@ InputManager:
     m_Name: OSXStart
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: enter
+    negativeButton: return
     positiveButton: joystick button 9
     altNegativeButton: 
     altPositiveButton: mouse 2
