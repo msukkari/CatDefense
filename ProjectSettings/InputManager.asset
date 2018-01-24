@@ -156,7 +156,7 @@ InputManager:
     negativeButton: 
     positiveButton: joystick button 16
     altNegativeButton: 
-    altPositiveButton: mouse 2
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -235,8 +235,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 5
-    altNegativeButton: 
-    altPositiveButton: mouse 2
+    altNegativeButton: left shift
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -251,8 +251,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 14
-    altNegativeButton: 
-    altPositiveButton: mouse 2
+    altNegativeButton: left shift
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -267,7 +267,7 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 0
-    altNegativeButton: 
+    altNegativeButton: space
     altPositiveButton: mouse 2
     gravity: 1000
     dead: 0.001
@@ -281,7 +281,7 @@ InputManager:
     m_Name: OSXA
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: space
     positiveButton: joystick button 16
     altNegativeButton: 
     altPositiveButton: mouse 2
@@ -297,7 +297,7 @@ InputManager:
     m_Name: WindowsB
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: l
     positiveButton: joystick button 1
     altNegativeButton: 
     altPositiveButton: mouse 2
@@ -313,7 +313,7 @@ InputManager:
     m_Name: OSXB
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: l
     positiveButton: joystick button 17
     altNegativeButton: 
     altPositiveButton: mouse 2
@@ -329,7 +329,7 @@ InputManager:
     m_Name: WindowsX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: j
     positiveButton: joystick button 2
     altNegativeButton: 
     altPositiveButton: mouse 2
@@ -345,7 +345,7 @@ InputManager:
     m_Name: OSXX
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: j
     positiveButton: joystick button 18
     altNegativeButton: 
     altPositiveButton: mouse 2
@@ -361,7 +361,7 @@ InputManager:
     m_Name: WindowsY
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: k
     positiveButton: joystick button 3
     altNegativeButton: 
     altPositiveButton: mouse 2
@@ -377,7 +377,7 @@ InputManager:
     m_Name: OSXY
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: k
     positiveButton: joystick button 19
     altNegativeButton: 
     altPositiveButton: mouse 2
@@ -393,7 +393,7 @@ InputManager:
     m_Name: WindowsStart
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: enter
     positiveButton: joystick button 7
     altNegativeButton: 
     altPositiveButton: mouse 2
@@ -409,7 +409,7 @@ InputManager:
     m_Name: OSXStart
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: enter
     positiveButton: joystick button 9
     altNegativeButton: 
     altPositiveButton: mouse 2
@@ -421,19 +421,3 @@ InputManager:
     type: 0
     axis: 4
     joyNum: 1
-  - serializedVersion: 3
-    m_Name: WindowsA
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: j
-    altNegativeButton: 
-    altPositiveButton: mouse 2
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 0
-    invert: 0
-    type: 0
-    axis: 4
-    joyNum: 0

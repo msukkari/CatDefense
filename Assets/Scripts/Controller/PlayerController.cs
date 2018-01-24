@@ -23,7 +23,9 @@ public class PlayerController : MonoBehaviour {
 		m_controllerInstance.OnYDown += onYDown;
 		m_controllerInstance.OnBDown += onBDown;
 		m_controllerInstance.OnLSChange += Move;
-		m_controllerInstance.OnRTChange += Boost;
+
+		m_controllerInstance.OnRBDown += BoostOn;
+		m_controllerInstance.OnRBUp += BoostOff;
 
         rb = GetComponent<Rigidbody2D>();
         m_curInteract = null;
@@ -47,10 +49,14 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space)) onADown();
     }
 
-
-	public void Boost(float amount)
+	public void BoostOn()
 	{
-		m_boostOn = amount > 0.5f;
+		m_boostOn = true;
+	}
+
+	public void BoostOff()
+	{
+		m_boostOn = false;
 	}
 
     public void Move(float x, float y)

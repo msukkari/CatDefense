@@ -35,7 +35,6 @@ public class WaveManager : MonoBehaviour {
 
     public GameObject pressStart; // press start to go to next level text
 
-	private bool waveActive = false;
 	private bool waveDone = true;
     private bool allWavesDone = false;
 
@@ -95,7 +94,6 @@ public class WaveManager : MonoBehaviour {
 	public void NextWave(){
 		if (enemiesLeft <= 0)
 		{
-			waveActive = true;
 			waveCount = Mathf.Clamp (waveCount + 1, 0, waves.Count);
 			StartCoroutine(SpawnWave ());
 		}
@@ -116,7 +114,6 @@ public class WaveManager : MonoBehaviour {
 			}
 		}
 
-		waveActive = false;
 	}
 
 	IEnumerator SpawnPointWave(SpawnPoints p){

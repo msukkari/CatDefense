@@ -45,7 +45,7 @@ public class RecipeUI : MonoBehaviour {
 
 		}
 
-		el.transform.parent = holder.transform;
+		el.transform.SetParent(holder.transform);
 		el.position = Vector3.zero;
 		currentRecipe.AddLast (el);
 		UpdateDisplay ();

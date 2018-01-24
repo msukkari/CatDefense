@@ -48,6 +48,8 @@ public class ControllerInputManager : MonoBehaviour {
 	public event ButtonDownEvevnt OnLTDown;
 	public event ButtonDownEvevnt OnStartDown;
 
+	public event ButtonDownEvevnt OnRBUp;
+
 
 	//Axis changes is called every update, TODO: should it just when nonzero...?
 	//Call these to get the value of an axis 
@@ -139,6 +141,10 @@ public class ControllerInputManager : MonoBehaviour {
 		if (OnRBDown != null && Input.GetButtonDown(getPlayerInputString(RB)))
 		{
 			OnRBDown ();
+		}
+		if(OnRBUp !=null && Input.GetButtonUp(getPlayerInputString(RB)))
+		{
+			OnRBUp ();
 		}
 		if (OnStartDown != null && Input.GetButtonDown(getPlayerInputString(START)))
 		{
