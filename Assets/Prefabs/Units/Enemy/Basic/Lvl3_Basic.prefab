@@ -179,6 +179,7 @@ MonoBehaviour:
   flipOnBack: 0
   flipXOnBack: 0
   freezeRotationVertical: 0
+  animate: 0
 --- !u!114 &114239309778564462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 6
   m_health: 0
+  animate: 0
   HealthBarUI: {fileID: 224083696314036988}
 --- !u!114 &114240202182993134
 MonoBehaviour:
@@ -256,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 4
   damage: 4
+  DamageOnDeath: 0
   layerTarget:
     serializedVersion: 2
     m_Bits: 512

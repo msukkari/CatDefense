@@ -9,7 +9,7 @@ public class HealthComponent : MonoBehaviour {
 	public float maxHealth = 10.0f;
 
 	public float m_health;
-
+	public bool animate = false;
 	public RectTransform HealthBarUI;
 
 
@@ -37,7 +37,7 @@ public class HealthComponent : MonoBehaviour {
 	private void CheckHealth(){
 
 		Animator anim = this.GetComponent<Animator> ();
-		if (anim != null)
+		if (anim != null && animate)
 		{
 			anim.SetFloat ("Health", m_health/maxHealth);	
 		}

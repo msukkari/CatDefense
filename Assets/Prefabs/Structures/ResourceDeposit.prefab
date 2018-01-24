@@ -364,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   m_health: 0
+  animate: 1
   HealthBarUI: {fileID: 224580735548357088}
 --- !u!114 &114193565300628660
 MonoBehaviour:

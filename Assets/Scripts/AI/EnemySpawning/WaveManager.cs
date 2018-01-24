@@ -46,7 +46,7 @@ public class WaveManager : MonoBehaviour {
 
         pressStart.SetActive(false);
 
-        for (int i = 0; i < waves.Count; i++) waves[i].WaveDelay = waveDelayList[i];
+		for (int i = 0; i < waves.Count; i++) waves[i].WaveDelay = waveDelayList[i>=waveDelayList.Length?waveDelayList.Length-1:i];
         NextWave ();
 
 	}

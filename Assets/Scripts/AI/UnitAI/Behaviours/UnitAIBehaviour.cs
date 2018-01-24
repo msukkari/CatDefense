@@ -51,6 +51,7 @@ public class UnitAIBehaviour : MonoBehaviour {
 	#endregion
 
 	HealthComponent m_healthMan;
+	public bool animate = true;
 
 	// Use this for initialization
 	void Start () {
@@ -203,7 +204,6 @@ public class UnitAIBehaviour : MonoBehaviour {
 				if(MainAttack!=null)
 					MainAttack.Execute(m_currentTarget);
 				return;
-				break;
 			}
 		case AIState.FindSecond:
 			{
@@ -225,7 +225,7 @@ public class UnitAIBehaviour : MonoBehaviour {
 
 
 		Animator anim = this.GetComponent<Animator> ();
-		if (anim != null)
+		if (anim != null && animate)
 		{
 			if (m_rb.velocity.magnitude != 0)
 			{

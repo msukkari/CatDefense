@@ -178,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   m_health: 0
+  animate: 0
   HealthBarUI: {fileID: 224870167219014118}
 --- !u!114 &114451962205037940
 MonoBehaviour:
@@ -206,6 +207,7 @@ MonoBehaviour:
   flipOnBack: 0
   flipXOnBack: 0
   freezeRotationVertical: 0
+  animate: 0
 --- !u!114 &114566662074985056
 MonoBehaviour:
   m_ObjectHideFlags: 1
