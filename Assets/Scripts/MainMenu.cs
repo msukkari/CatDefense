@@ -20,7 +20,9 @@ public class MainMenu : MonoBehaviour {
         levelTextList = new List<Text>();
         foreach(Transform child in levelSelectImage.transform)
         {
-            levelTextList.Add(child.GetComponent<Text>());
+			Text t = child.GetComponent<Text> ();
+			if(t!=null)
+           	 levelTextList.Add(child.GetComponent<Text>());
         }
 
         m_controllerInstance = ControllerInputManager.GetInstance();
@@ -57,13 +59,36 @@ public class MainMenu : MonoBehaviour {
 
     public void onLSChange(float x, float y)
     {
+		//Temporary so we can use keyboard input as well
+		if (x == 0 && y == 0)
+		{
+			if (Input.GetKeyDown (KeyCode.S))
+			{
+				if (selectedLevel < levelTextList.Count - 1)
+				{
+					levelTextList [selectedLevel].color = Color.black;
+					selectedLevel = (selectedLevel + 1) % levelTextList.Count;
+					levelTextList [selectedLevel].color = Color.white;
+				}
+			} else if (Input.GetKeyDown (KeyCode.W))
+			{
+				if(selectedLevel > 0)
+				{
+					levelTextList[selectedLevel].color = Color.black;
+					selectedLevel = (selectedLevel - 1) % levelTextList.Count;
+					levelTextList[selectedLevel].color = Color.white;
+				}
+			}
+		}
+
         if (!joystickChanged)
         {
             if (y < 0) 
             {
                 if(selectedLevel < levelTextList.Count - 1)
                 {
-                    levelTextList[selectedLevel++].color = Color.black;
+                    levelTextList[selectedLevel].color = Color.black;
+					selectedLevel = (selectedLevel + 1) % levelTextList.Count;
                     levelTextList[selectedLevel].color = Color.white;
 
                 }
@@ -73,20 +98,23 @@ public class MainMenu : MonoBehaviour {
             {
                 if(selectedLevel > 0)
                 {
-                    levelTextList[selectedLevel--].color = Color.black;
+                    levelTextList[selectedLevel].color = Color.black;
+					selectedLevel = (selectedLevel - 1) % levelTextList.Count;
                     levelTextList[selectedLevel].color = Color.white;
                 }
                 joystickChanged = true;
             }
 
             // make sure selectedLevel doesn't exceed bounds
-            selectedLevel = selectedLevel < 0 ? 0 : (selectedLevel >= levelTextList.Count ? levelTextList.Count - 1 : selectedLevel);
-			for (int i = 0; i < menuDisplay.Length; i++)
-			{
-				menuDisplay[i].SetActive (i == selectedLevel);
-			}
+            //selectedLevel = selectedLevel < 0 ? 0 : (selectedLevel >= levelTextList.Count ? levelTextList.Count - 1 : selectedLevel);
         }
         else if (y == 0) joystickChanged = false;
+
+		for (int i = 0; i < menuDisplay.Length; i++)
+		{
+			menuDisplay[i].SetActive (i == selectedLevel);
+		}
+
     }
 
 

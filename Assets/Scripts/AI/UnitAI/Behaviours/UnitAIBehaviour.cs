@@ -219,7 +219,6 @@ public class UnitAIBehaviour : MonoBehaviour {
 					OtherAttack.Execute(m_currentTarget);
 
 				return;
-				break;
 			}
 		}
 

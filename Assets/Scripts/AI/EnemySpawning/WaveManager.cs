@@ -35,7 +35,6 @@ public class WaveManager : MonoBehaviour {
 
     public GameObject pressStart; // press start to go to next level text
 
-	private bool waveDone = true;
     private bool allWavesDone = false;
 
     private int[] waveDelayList = { 3, 3, 5, 5, 5 };
@@ -68,27 +67,6 @@ public class WaveManager : MonoBehaviour {
                 SceneManager.LoadScene("menu");
             }
         }
-
-        /*
-		if (waveDone)
-		{
-			if (waveCount >= (waves.Count-1))
-			{
-				
-				if (!string.IsNullOrEmpty(next_level))
-				{
-					SceneManager.LoadScene (next_level);
-				} else
-				{
-					SceneManager.LoadScene ("menu");
-				}
-			} else
-			{
-				NextWave ();
-			}
-		}
-        */
-
 	}
 
 	public void NextWave(){
@@ -101,7 +79,6 @@ public class WaveManager : MonoBehaviour {
 
 	IEnumerator SpawnWave()
 	{
-		waveDone = false;
 		//Call this when you want to spawn the current wave
 		if (waveCount < waves.Count)
 		{
@@ -135,7 +112,6 @@ public class WaveManager : MonoBehaviour {
 		enemiesLeft--;
 		if (enemiesLeft <= 0)
 		{
-			waveDone = true;
 			if (waveCount >= (waves.Count-1))
 			{
                 //Game Done!
